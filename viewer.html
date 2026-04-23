@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <title>Web TV Viewer - IPTV PRO ULTIMATE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: #fff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            position: fixed;
+        }
+
+        .viewer-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        /* ===== FULLSCREEN MODE ===== */
+        .viewer-container.fullscreen-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99999;
+            background: #000;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .viewer-container.fullscreen-mode .viewer-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 100000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, transparent 100%);
+            border-bottom: none;
+        }
+
+        .viewer-container.fullscreen-mode:hover .viewer-header,
+        .viewer-container.fullscreen-mode .viewer-header:hover {
+            opacity: 1;
+        }
+
+        .viewer-container.fullscreen-mode .viewer-content {
+            height: 100vh;
+        }
+
+        /* ===== MAXIMIZED MODE (window-level expand) ===== */
+        .viewer-container.maximized-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .viewer-container.maximized-mode .viewer-content {
+            height: calc(100vh - 60px);
+        }
+
+        /* ===== RESIZED MODE ===== */
+        .viewer-container.resized-mode {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9998;
+            margin: 0;
+            border-radius: 12px;
+            box-shadow: 0 0 60px rgba(229,9,20,0.5), 0 0 120px rgba(0,0,0,0.8);
+        }
+
+        .viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%);
+            border-bottom: 2px solid #E50914;
+            z-index: 100;
+            flex-shrink: 0;
+            transition: opacity 0.4s ease;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .viewer-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #E50914;
+            min-width: 150px;
+        }
+
+        .viewer-title i {
+            font-size: 1.2rem;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .viewer-controls {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .viewer-btn {
+            background: linear-gradient(135deg, rgba(229,9,20,0.3) 0%, rgba(229,9,20,0.1) 100%);
+            border: 1px solid #E50914;
+            color: #E50914;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .viewer-btn:hover {
+            background: #E50914;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(229,9,20,0.5);
+        }
+
+        .viewer-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* Maximize button special style */
+        .viewer-btn.maximize-btn {
+            background: linear-gradient(135deg, rgba(229,9,20,0.5) 0%, rgba(229,9,20,0.2) 100%);
+            border: 1px solid #E50914;
+            box-shadow: 0 0 10px rgba(229,9,20,0.3);
+        }
+
+        .viewer-btn.maximize-btn:hover {
+            background: linear-gradient(135deg, #E50914 0%, #c0070f 100%);
+            box-shadow: 0 0 20px rgba(229,9,20,0.7);
+        }
+
+        /* Fullscreen button special style */
+        .viewer-btn.fullscreen-btn {
+            background: linear-gradient(135deg, rgba(255,165,0,0.4) 0%, rgba(255,165,0,0.15) 100%);
+            border: 1px solid #FFA500;
+            color: #FFA500;
+            box-shadow: 0 0 10px rgba(255,165,0,0.3);
+        }
+
+        .viewer-btn.fullscreen-btn:hover {
+            background: linear-gradient(135deg, #FFA500 0%, #e69500 100%);
+            color: #000;
+            box-shadow: 0 0 20px rgba(255,165,0,0.7);
+        }
+
+        .viewer-content {
+            flex: 1;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #000;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            object-fit: contain;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            backdrop-filter: blur(5px);
+        }
+
+        .loading-overlay.hidden {
+            display: none;
+        }
+
+        .spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .spinner-circle {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(229,9,20,0.2);
+            border-top-color: #E50914;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .spinner-text {
+            font-size: 1rem;
+            color: #E50914;
+            font-weight: bold;
+        }
+
+        .error-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .error-overlay.hidden {
+            display: none;
+        }
+
+        .error-content {
+            text-align: center;
+        }
+
+        .error-icon {
+            font-size: 3rem;
+            color: #E50914;
+            margin-bottom: 15px;
+        }
+
+        .error-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .error-message {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 20px;
+            max-width: 400px;
+        }
+
+        .error-btn {
+            background: linear-gradient(135deg, #E50914 0%, #c0070f 100%);
+            border: none;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .error-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(229,9,20,0.4);
+        }
+
+        /* ===== KEYBOARD SHORTCUT HINT ===== */
+        .shortcut-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.85);
+            border: 1px solid rgba(229,9,20,0.4);
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 0.75rem;
+            color: #aaa;
+            z-index: 200;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .shortcut-hint.fade-out {
+            opacity: 0;
+        }
+
+        .shortcut-hint span {
+            color: #E50914;
+            font-weight: bold;
+        }
+
+        /* ===== SIZE SLIDER PANEL ===== */
+        .size-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            border: 1px solid rgba(229,9,20,0.5);
+            border-radius: 30px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 200;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(229,9,20,0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .size-panel.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .size-panel label {
+            font-size: 0.75rem;
+            color: #aaa;
+            white-space: nowrap;
+        }
+
+        .size-panel input[type="range"] {
+            -webkit-appearance: none;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(to right, #E50914, #c0070f);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .size-panel input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #E50914;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(229,9,20,0.7);
+        }
+
+        .size-panel input[type="range"]::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #E50914;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(229,9,20,0.7);
+            border: none;
+        }
+
+        .size-panel .size-value {
+            font-size: 0.75rem;
+            color: #E50914;
+            font-weight: bold;
+            min-width: 35px;
+            text-align: center;
+        }
+
+        .size-panel .close-panel-btn {
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 2px 4px;
+            transition: color 0.2s;
+        }
+
+        .size-panel .close-panel-btn:hover {
+            color: #E50914;
+        }
+
+        /* ===== TABLET/DESKTOP RESPONSIVE ===== */
+        @media (min-width: 769px) {
+            .viewer-header {
+                padding: 12px 15px;
+            }
+
+            .viewer-title {
+                font-size: 1.1rem;
+                min-width: 150px;
+            }
+
+            .viewer-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .viewer-btn .btn-label {
+                display: inline;
+            }
+        }
+
+        /* ===== MOBILE PORTRAIT MODE ===== */
+        @media (max-width: 768px) and (orientation: portrait) {
+            .viewer-header {
+                padding: 8px 10px;
+                flex-wrap: wrap;
+            }
+
+            .viewer-title {
+                font-size: 0.9rem;
+                min-width: auto;
+                flex: 1;
+            }
+
+            .viewer-title i {
+                font-size: 1rem;
+            }
+
+            .viewer-controls {
+                width: 100%;
+                gap: 4px;
+            }
+
+            .viewer-btn {
+                padding: 5px 8px;
+                font-size: 0.7rem;
+                border-radius: 12px;
+            }
+
+            .viewer-btn .btn-label {
+                display: none;
+            }
+
+            .viewer-btn i {
+                font-size: 0.8rem;
+            }
+
+            .shortcut-hint {
+                font-size: 0.65rem;
+                padding: 6px 10px;
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .size-panel {
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 6px 12px;
+                border-radius: 25px;
+            }
+
+            .size-panel input[type="range"] {
+                width: 100px;
+                height: 4px;
+            }
+
+            .size-panel label {
+                font-size: 0.65rem;
+            }
+
+            .size-panel .size-value {
+                font-size: 0.65rem;
+                min-width: 30px;
+            }
+        }
+
+        /* ===== MOBILE LANDSCAPE MODE (OPTIMIZED) ===== */
+        @media (max-width: 768px) and (orientation: landscape) {
+            html, body {
+                height: 100vh;
+                width: 100vw;
+                max-height: 100vh;
+                max-width: 100vw;
+            }
+
+            .viewer-container {
+                height: 100vh;
+                width: 100vw;
+                max-height: 100vh;
+                max-width: 100vw;
+            }
+
+            .viewer-header {
+                padding: 4px 8px;
+                height: auto;
+                min-height: 40px;
+                max-height: 40px;
+                gap: 4px;
+                border-bottom: 1px solid #E50914;
+                flex-shrink: 0;
+            }
+
+            .viewer-title {
+                font-size: 0.7rem;
+                gap: 4px;
+                min-width: auto;
+                flex: 0 0 auto;
+            }
+
+            .viewer-title i {
+                font-size: 0.8rem;
+            }
+
+            .viewer-controls {
+                gap: 3px;
+                width: auto;
+                flex: 1;
+                justify-content: flex-end;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+
+            .viewer-controls::-webkit-scrollbar {
+                display: none;
+            }
+
+            .viewer-btn {
+                padding: 3px 6px;
+                font-size: 0.55rem;
+                border-radius: 10px;
+                flex-shrink: 0;
+                height: 24px;
+                display: flex;
+                align-items: center;
+            }
+
+            .viewer-btn .btn-label {
+                display: none;
+            }
+
+            .viewer-btn i {
+                font-size: 0.65rem;
+            }
+
+            .viewer-content {
+                height: calc(100vh - 40px);
+                width: 100vw;
+                flex-shrink: 0;
+                overflow: hidden;
+            }
+
+            .iframe-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #000;
+            }
+
+            .iframe-container iframe {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+
+            .shortcut-hint {
+                display: none;
+            }
+
+            .size-panel {
+                bottom: 5px;
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 0.6rem;
+            }
+
+            .size-panel input[type="range"] {
+                width: 80px;
+                height: 3px;
+            }
+
+            .size-panel label {
+                font-size: 0.6rem;
+            }
+
+            .size-panel .size-value {
+                font-size: 0.6rem;
+                min-width: 25px;
+            }
+
+            .size-panel .close-panel-btn {
+                font-size: 0.7rem;
+            }
+
+            .error-icon {
+                font-size: 2rem;
+            }
+
+            .error-title {
+                font-size: 1rem;
+            }
+
+            .error-message {
+                font-size: 0.75rem;
+            }
+
+            .error-btn {
+                padding: 6px 15px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ===== EXTRA SMALL MOBILE LANDSCAPE ===== */
+        @media (max-width: 480px) and (orientation: landscape) {
+            .viewer-header {
+                min-height: 40px;
+                padding: 3px 6px;
+            }
+
+            .viewer-title {
+                font-size: 0.65rem;
+            }
+
+            .viewer-btn {
+                padding: 2px 4px;
+                font-size: 0.55rem;
+            }
+
+            .viewer-btn i {
+                font-size: 0.6rem;
+            }
+
+            .viewer-content {
+                height: calc(100vh - 40px);
+            }
+
+            .size-panel {
+                bottom: 3px;
+                padding: 3px 8px;
+            }
+
+            .size-panel input[type="range"] {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="viewer-container" id="viewer-container">
+        <div class="viewer-header" id="viewer-header">
+            <div class="viewer-title">
+                <i class="fas fa-globe"></i>
+                <span id="viewer-title-text">Web TV</span>
+            </div>
+            <div class="viewer-controls">
+                <button class="viewer-btn" onclick="goBack()" title="Back (Esc)">
+                    <i class="fas fa-arrow-left"></i> <span class="btn-label">Back</span>
+                </button>
+                <button class="viewer-btn" onclick="reloadViewer()" title="Reload">
+                    <i class="fas fa-redo"></i> <span class="btn-label">Reload</span>
+                </button>
+                <button class="viewer-btn maximize-btn" id="size-toggle-btn" onclick="toggleSizePanel()" title="Resize (R)">
+                    <i class="fas fa-expand-arrows-alt"></i> <span class="btn-label">Resize</span>
+                </button>
+                <button class="viewer-btn maximize-btn" id="maximize-btn" onclick="toggleMaximize()" title="Maximize (M)">
+                    <i class="fas fa-window-maximize" id="maximize-icon"></i> <span class="btn-label" id="maximize-label">Max</span>
+                </button>
+                <button class="viewer-btn fullscreen-btn" id="fullscreen-btn" onclick="toggleFullscreen()" title="Fullscreen (F)">
+                    <i class="fas fa-expand" id="fullscreen-icon"></i> <span class="btn-label" id="fullscreen-label">Full</span>
+                </button>
+                <button class="viewer-btn" onclick="openInNewTab()" title="Open in new tab">
+                    <i class="fas fa-external-link-alt"></i> <span class="btn-label">Open</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="viewer-content" id="viewer-content">
+            <div class="iframe-container" id="iframe-container">
+                <iframe
+                    id="viewer-iframe"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"
+                    allow="autoplay *; encrypted-media *; fullscreen *; picture-in-picture *"
+                    allowfullscreen
+                ></iframe>
+
+                <div class="loading-overlay" id="loading-overlay">
+                    <div class="spinner">
+                        <div class="spinner-circle"></div>
+                        <div class="spinner-text">Loading...</div>
+                    </div>
+                </div>
+
+                <div class="error-overlay hidden" id="error-overlay">
+                    <div class="error-content">
+                        <div class="error-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="error-title">Unable to Load</div>
+                        <div class="error-message" id="error-message">
+                            The website couldn't be loaded. Try opening in a new tab.
+                        </div>
+                        <button class="error-btn" onclick="openInNewTab()">
+                            <i class="fas fa-external-link-alt"></i> Open in New Tab
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIZE SLIDER PANEL -->
+    <div class="size-panel" id="size-panel">
+        <label><i class="fas fa-compress-arrows-alt"></i></label>
+        <input
+            type="range"
+            id="size-slider"
+            min="30"
+            max="100"
+            value="100"
+            step="5"
+            oninput="applySize(this.value)"
+        >
+        <label><i class="fas fa-expand-arrows-alt"></i></label>
+        <span class="size-value" id="size-value-label">100%</span>
+        <button class="close-panel-btn" onclick="toggleSizePanel()" title="Close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- KEYBOARD SHORTCUT HINT -->
+    <div class="shortcut-hint" id="shortcut-hint">
+        <span>F</span> Full &nbsp;|&nbsp;
+        <span>M</span> Max &nbsp;|&nbsp;
+        <span>R</span> Size &nbsp;|&nbsp;
+        <span>Esc</span> Back
+    </div>
+
+    <script>
+        let currentURL = '';
+        let currentTitle = '';
+        let isMaximized = false;
+        let isFullscreen = false;
+        let isResized = false;
+        let sizePanelOpen = false;
+        let isMobile = window.innerWidth <= 768;
+
+        // Get URL from query parameter
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Initialize viewer
+        function initViewer() {
+            currentURL = getQueryParam('url');
+            currentTitle = getQueryParam('title') || 'Web TV';
+
+            if (!currentURL) {
+                showError('No URL provided');
+                return;
+            }
+
+            document.getElementById('viewer-title-text').textContent = currentTitle;
+            loadContent();
+
+            // Hide shortcut hint after 5 seconds (only on desktop)
+            if (window.innerWidth > 768) {
+                setTimeout(() => {
+                    const hint = document.getElementById('shortcut-hint');
+                    hint.classList.add('fade-out');
+                    setTimeout(() => { hint.style.display = 'none'; }, 600);
+                }, 5000);
+            }
+        }
+
+        // Load content in iframe
+        function loadContent() {
+            const iframe = document.getElementById('viewer-iframe');
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const errorOverlay = document.getElementById('error-overlay');
+
+            loadingOverlay.classList.remove('hidden');
+            errorOverlay.classList.add('hidden');
+
+            try {
+                iframe.src = currentURL;
+
+                setTimeout(() => {
+                    const lo = document.getElementById('loading-overlay');
+                    if (!lo.classList.contains('hidden')) {
+                        lo.classList.add('hidden');
+                    }
+                }, 3000);
+
+                iframe.onload = function() {
+                    document.getElementById('loading-overlay').classList.add('hidden');
+                };
+
+                iframe.onerror = function() {
+                    showError('Failed to load the website');
+                };
+            } catch (error) {
+                showError('Error loading content: ' + error.message);
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            document.getElementById('loading-overlay').classList.add('hidden');
+            document.getElementById('error-overlay').classList.remove('hidden');
+            document.getElementById('error-message').textContent = message;
+        }
+
+        // Reload viewer
+        function reloadViewer() {
+            loadContent();
+        }
+
+        // Go back to Web TV page
+        function goBack() {
+            if (isFullscreen || document.fullscreenElement) exitFullscreen();
+            if (isMaximized) restoreMaximize();
+            if (isResized) restoreSize();
+            window.location.href = 'webtv.html';
+        }
+
+        // Open in new tab
+        function openInNewTab() {
+            if (currentURL) {
+                window.open(currentURL, '_blank');
+            }
+        }
+
+        // ===== MAXIMIZE (Window-level expand) =====
+        function toggleMaximize() {
+            if (isMaximized) {
+                restoreMaximize();
+            } else {
+                doMaximize();
+            }
+        }
+
+        function doMaximize() {
+            isMaximized = true;
+            isResized = false;
+            const container = document.getElementById('viewer-container');
+            container.classList.add('maximized-mode');
+            container.classList.remove('resized-mode');
+            document.getElementById('maximize-icon').className = 'fas fa-window-restore';
+            document.getElementById('maximize-label').textContent = 'Restore';
+        }
+
+        function restoreMaximize() {
+            isMaximized = false;
+            const container = document.getElementById('viewer-container');
+            container.classList.remove('maximized-mode');
+            document.getElementById('maximize-icon').className = 'fas fa-window-maximize';
+            document.getElementById('maximize-label').textContent = 'Max';
+        }
+
+        // ===== FULLSCREEN (Browser native fullscreen) =====
+        function toggleFullscreen() {
+            if (isFullscreen || document.fullscreenElement) {
+                exitFullscreen();
+            } else {
+                enterFullscreen();
+            }
+        }
+
+        function enterFullscreen() {
+            const container = document.getElementById('viewer-container');
+            if (container.requestFullscreen) {
+                container.requestFullscreen().catch(err => console.error('Fullscreen error:', err));
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen();
+            } else if (container.mozRequestFullScreen) {
+                container.mozRequestFullScreen();
+            } else if (container.msRequestFullscreen) {
+                container.msRequestFullscreen();
+            }
+        }
+
+        function exitFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen().catch(err => console.error('Exit fullscreen error:', err));
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+
+        // Listen for fullscreen change events
+        document.addEventListener('fullscreenchange', onFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+        document.addEventListener('mozfullscreenchange', onFullscreenChange);
+        document.addEventListener('MSFullscreenChange', onFullscreenChange);
+
+        function onFullscreenChange() {
+            const container = document.getElementById('viewer-container');
+            if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+                isFullscreen = true;
+                container.classList.add('fullscreen-mode');
+                document.getElementById('fullscreen-icon').className = 'fas fa-compress';
+                document.getElementById('fullscreen-label').textContent = 'Exit';
+            } else {
+                isFullscreen = false;
+                container.classList.remove('fullscreen-mode');
+                document.getElementById('fullscreen-icon').className = 'fas fa-expand';
+                document.getElementById('fullscreen-label').textContent = 'Full';
+            }
+        }
+
+        // ===== SIZE SLIDER PANEL =====
+        function toggleSizePanel() {
+            sizePanelOpen = !sizePanelOpen;
+            const panel = document.getElementById('size-panel');
+            if (sizePanelOpen) {
+                panel.classList.add('visible');
+            } else {
+                panel.classList.remove('visible');
+            }
+        }
+
+        function applySize(value) {
+            const container = document.getElementById('viewer-container');
+            const label = document.getElementById('size-value-label');
+            label.textContent = value + '%';
+
+            if (parseInt(value) >= 100) {
+                restoreSize();
+            } else {
+                isResized = true;
+                isMaximized = false;
+                const w = value + 'vw';
+                const h = value + 'vh';
+                container.classList.add('resized-mode');
+                container.classList.remove('maximized-mode', 'fullscreen-mode');
+                container.style.width = w;
+                container.style.height = h;
+            }
+        }
+
+        function restoreSize() {
+            isResized = false;
+            const container = document.getElementById('viewer-container');
+            container.classList.remove('resized-mode');
+            container.style.width = '';
+            container.style.height = '';
+            document.getElementById('size-slider').value = '100';
+            document.getElementById('size-value-label').textContent = '100%';
+        }
+
+        // ===== KEYBOARD SHORTCUTS =====
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+            switch (e.key.toLowerCase()) {
+                case 'escape':
+                    if (isFullscreen || document.fullscreenElement) {
+                        // Browser handles this
+                    } else if (isMaximized) {
+                        restoreMaximize();
+                    } else if (isResized) {
+                        restoreSize();
+                    } else if (sizePanelOpen) {
+                        toggleSizePanel();
+                    } else {
+                        goBack();
+                    }
+                    break;
+                case 'f':
+                    e.preventDefault();
+                    toggleFullscreen();
+                    break;
+                case 'm':
+                    e.preventDefault();
+                    toggleMaximize();
+                    break;
+                case 'r':
+                    e.preventDefault();
+                    toggleSizePanel();
+                    break;
+            }
+        });
+
+        // Handle window resize and orientation change
+        window.addEventListener('resize', () => {
+            isMobile = window.innerWidth <= 768;
+        });
+
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                isMobile = window.innerWidth <= 768;
+                // Auto-close size panel on orientation change
+                if (sizePanelOpen) {
+                    toggleSizePanel();
+                }
+            }, 100);
+        });
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', initViewer);
+    </script>
+</body>
+</html>

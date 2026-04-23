@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#E50914">
+    <meta name="description" content="Experience the ultimate live TV streaming with our premium IPTV service.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IPTV PRO">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    <title>IPTV PRO ULTIMATE - Dashboard</title>
+    <link rel="stylesheet" href="style.css?v=33">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Desktop View: Show category tabs and action buttons */
+        @media (min-width: 481px) {
+            .navbar-categories-row {
+                display: flex !important; /* Show categories on desktop */
+                top: 70px !important;
+                z-index: 998 !important;
+            }
+            
+            .navbar-actions-row {
+                display: none !important; /* Hide mobile action row on desktop */
+            }
+
+            .nav-links {
+                display: flex !important;
+                gap: 15px !important;
+            }
+
+            .nav-action-btn-desktop {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 6px !important;
+                padding: 8px 16px !important;
+                background: linear-gradient(135deg, rgba(229, 9, 20, 0.15) 0%, rgba(229, 9, 20, 0.05) 100%) !important;
+                border: 1.5px solid rgba(229, 9, 20, 0.5) !important;
+                border-radius: 25px !important;
+                color: var(--primary-color) !important;
+                cursor: pointer !important;
+                font-size: 0.92rem !important;
+                font-weight: 700 !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                white-space: nowrap !important;
+                backdrop-filter: blur(10px) !important;
+                box-shadow: 0 4px 15px rgba(229, 9, 20, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+                letter-spacing: 0.5px !important;
+                margin-left: 10px !important;
+            }
+
+            .nav-action-btn-desktop:hover {
+                background: linear-gradient(135deg, rgba(229, 9, 20, 0.3) 0%, rgba(229, 9, 20, 0.15) 100%);
+                border-color: var(--primary-color);
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+                color: #FFD700;
+            }
+
+            .nav-action-btn-desktop.active {
+                background: linear-gradient(135deg, var(--primary-color) 0%, #c0070f 100%);
+                color: white;
+                border-color: #FFD700;
+                box-shadow: 0 0 20px rgba(229, 9, 20, 0.6), 0 0 40px rgba(229, 9, 20, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-action-btn-desktop i {
+                font-size: 1rem;
+            }
+
+            .hero-banner {
+                margin-top: 130px !important; /* Navbar + categories row */
+            }
+        }
+
+        /* Mobile View: Keep tabs at the bottom */
+        @media (max-width: 480px) {
+            .nav-action-btn-desktop {
+                display: none !important; /* Hide desktop action buttons on mobile */
+            }
+
+            .navbar-categories-row {
+                top: 70px !important;
+                padding: 4px 2% !important;
+                height: auto !important;
+                min-height: 80px !important;
+                display: flex !important;
+                align-items: center !important;
+                background: rgba(0, 0, 0, 0.95) !important;
+            }
+            
+            .navbar-actions-row {
+                position: fixed !important;
+                top: auto !important;
+                bottom: 0 !important; /* Tabs at the bottom for mobile */
+                left: 0 !important;
+                right: 0 !important;
+                height: auto !important;
+                min-height: 60px !important;
+                padding: 8px 2% !important;
+                background: rgba(0, 0, 0, 0.95) !important;
+                border-top: 1px solid rgba(229, 9, 20, 0.2) !important;
+                z-index: 999 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .hero-banner {
+                margin-top: 150px !important; /* Adjusted for mobile top nav only */
+            }
+
+            .nav-categories {
+                gap: 4px !important;
+                display: grid !important;
+                grid-template-columns: repeat(5, 1fr) !important;
+                overflow-x: visible !important;
+                overflow-y: visible !important;
+                scrollbar-width: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                flex-wrap: wrap !important;
+                padding: 4px 0 !important;
+            }
+            
+            .nav-category-item {
+                padding: 4px 2px !important;
+                font-size: 0.65rem !important;
+                min-height: 34px !important;
+                max-height: 34px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                flex: 1 1 20% !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                border-radius: 12px !important;
+                line-height: 1.1 !important;
+            }
+
+            .nav-actions-full {
+                justify-content: space-around !important;
+                gap: 8px !important;
+                padding: 0 !important;
+                display: flex !important;
+                width: 100% !important;
+            }
+
+            .nav-action-btn {
+                flex: 1 !important;
+                min-width: 0 !important;
+                padding: 8px 4px !important;
+                font-size: 0.7rem !important;
+                min-height: 44px !important;
+                gap: 4px !important;
+            }
+            
+            .channel-card img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+                max-height: 180px !important;
+                object-fit: contain !important;
+                object-position: center !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                margin: 0 auto !important;
+                padding: 10px !important;
+                display: block !important;
+            }
+            
+            .channel-card {
+                min-height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
+
+            .content-section {
+                padding-bottom: 80px !important; /* Space for bottom tabs */
+            }
+        }
+    </style>
+    <script>
+        // Register Service Worker with proper scope and update check
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js', { scope: './' })
+                    .then(reg => {
+                        console.log('Service Worker registered with scope:', reg.scope);
+                        // Check for updates periodically
+                        reg.update();
+                    })
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+
+        // PWA Install Prompt Logic
+        let deferredPrompt;
+        
+        // Check if app is already installed or running in standalone mode
+        function isAppInstalled() {
+            return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+        }
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent Chrome 67 and earlier from automatically showing the prompt
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            // Update UI notify the user they can install the PWA
+            console.log('PWA Install Prompt is ready');
+            
+            // Only show if not already in standalone mode
+            if (!isAppInstalled()) {
+                showInstallPrompt();
+            }
+        });
+
+        function showInstallPrompt() {
+            const btn = document.getElementById('install-app-btn');
+            if (btn) {
+                btn.style.display = 'flex';
+                // Add a small animation to catch attention
+                btn.classList.add('pulse-animation');
+            }
+        }
+
+        function installApp() {
+            if (!deferredPrompt) {
+                // If already in standalone, show message
+                if (isAppInstalled()) {
+                    alert('App is already installed.');
+                } else {
+                    console.log('Install prompt not available yet.');
+                }
+                return;
+            }
+            // Show the prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                    // Hide the button only if accepted
+                    const btn = document.getElementById('install-app-btn');
+                    if (btn) btn.style.display = 'none';
+                    deferredPrompt = null;
+                } else {
+                    console.log('User dismissed the install prompt, keeping button visible.');
+                    // We don't hide the button or null the prompt so they can try again
+                }
+            });
+        }
+
+        // Check if app is already installed
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('IPTV PRO was installed');
+            const btn = document.getElementById('install-app-btn');
+            if (btn) btn.style.display = 'none';
+            deferredPrompt = null;
+        });
+
+        // Initial check on load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (isAppInstalled()) {
+                const btn = document.getElementById('install-app-btn');
+                if (btn) btn.style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container" onclick="showHome()">
+                <img src="banner.jpg" alt="IPTV PRO" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item" id="nav-home" onclick="showHome()"><i class="fas fa-home"></i> Home</li>
+                <!-- Desktop Action Buttons (Next to Home) -->
+                <button class="nav-action-btn-desktop nav-premium-desktop" onclick="showPremiumLive()" title="Premium Live">
+                    <i class="fas fa-crown"></i> Premium Live
+                </button>
+                <button class="nav-action-btn-desktop nav-webtv-desktop" onclick="showWebTV()" title="Open Web TV">
+                    <i class="fas fa-globe"></i> Web TV
+                </button>
+                <button class="nav-action-btn-desktop nav-mylist-desktop" onclick="showFavorites()" title="My Favorites">
+                    <i class="fas fa-heart"></i> My List
+                </button>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="install-app-btn" id="install-app-btn" onclick="installApp()" style="display: none;">
+                <i class="fas fa-download"></i> Install App
+            </button>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Search channels...">
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation Bar (Categories - Desktop + Mobile) -->
+    <nav class="navbar-secondary navbar-categories-row">
+        <div class="nav-secondary-left">
+            <ul class="nav-categories" id="nav-categories">
+                <!-- Categories will be loaded here via JS -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tertiary Navigation Bar (Actions - Mobile Only, Bottom) -->
+    <nav class="navbar-secondary navbar-actions-row">
+        <div class="nav-secondary-right nav-actions-full">
+            <button class="nav-action-btn nav-premium" onclick="showPremiumLive()" title="Premium Live">
+                <i class="fas fa-crown"></i> Premium Live
+            </button>
+            <button class="nav-action-btn nav-webtv" onclick="showWebTV()" title="Open Web TV">
+                <i class="fas fa-globe"></i> Web TV
+            </button>
+            <button class="nav-action-btn nav-mylist" onclick="showFavorites()" title="My Favorites">
+                <i class="fas fa-heart"></i> My List
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero-banner" id="main-hero">
+        <div class="hero-content">
+            <h1 id="hero-title">IPTV ULTRA PRO</h1>
+            <p id="hero-desc">Experience the ultimate live TV streaming with our premium IPTV service. Watch your favorite channels in crystal clear HD quality.</p>
+            <div class="developer-tag">
+                <div style="font-size: 1.2rem; font-weight: 900; letter-spacing: 1px;">🎯 FEROZ MOLLA</div>
+                <div style="font-size: 0.85rem; font-style: italic; margin-top: 5px; color: #B3B3B3; font-weight: 400;">Founder & CEO @ Digital Future Academy</div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn-play" onclick="playFirstChannel()"><i class="fas fa-play"></i> Play Now</button>
+                <button class="btn-info" onclick="showPremiumLive()"><i class="fas fa-crown"></i> Premium Live</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2 id="section-title">Trending Now</h2>
+        <div id="channels" class="channel-grid">
+            <!-- Channels will be loaded here via JS -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i> Loading Channels...
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 IPTV PRO ULTIMATE. All rights reserved.</p>
+        <p style="margin-top: 10px; color: #E50914; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.5px;">🎯 FEROZ MOLLA</p>
+        <p style="margin-top: 5px; color: #B3B3B3; font-style: italic; font-size: 0.9rem; font-weight: 400;">Founder & CEO @ Digital Future Academy</p>
+    </footer>
+
+    <script src="app.js?v=33"></script>
+</body>
+</html>

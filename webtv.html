@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web TV - IPTV PRO ULTIMATE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .webtv-container {
+            padding-top: 70px;
+            min-height: 100vh;
+            background: #000;
+        }
+
+        .webtv-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 4%;
+            background: rgba(0,0,0,0.95);
+            border-bottom: 2px solid #E50914;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .webtv-header h1 {
+            font-size: 1.8rem;
+            color: #E50914;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .webtv-header h1 i {
+            font-size: 2rem;
+            animation: globeRotate 3s linear infinite;
+        }
+
+        @keyframes globeRotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .back-home-btn {
+            background: linear-gradient(135deg, rgba(229,9,20,0.3) 0%, rgba(229,9,20,0.1) 100%);
+            border: 1px solid #E50914;
+            color: #E50914;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-home-btn:hover {
+            background: #E50914;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .webtv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 4%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .webtv-card {
+            background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(15,15,15,0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229,9,20,0.4);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            /* Performance optimization: will-change */
+            will-change: transform, box-shadow;
+        }
+
+        .webtv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(229,9,20,0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .webtv-card:hover {
+            border-color: #E50914;
+            box-shadow: 0 12px 40px rgba(229,9,20,0.4), inset 0 0 20px rgba(229,9,20,0.15), 0 0 30px rgba(229,9,20,0.2);
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .webtv-card:hover::before {
+            opacity: 1;
+        }
+
+        .webtv-card-icon {
+            font-size: 4rem;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(229,9,20,0.2) 0%, rgba(229,9,20,0.05) 100%);
+            color: #E50914;
+            position: relative;
+            z-index: 2;
+        }
+
+        .webtv-card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .webtv-card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .webtv-card-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .webtv-card-btn {
+            background: linear-gradient(135deg, #E50914 0%, #c0070f 100%);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .webtv-card-btn:hover {
+            background: linear-gradient(135deg, #c0070f 0%, #a00509 100%);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(229,9,20,0.4);
+        }
+
+        .webtv-card-btn i {
+            font-size: 1.1rem;
+        }
+
+        .loading-text {
+            text-align: center;
+            padding: 40px;
+            color: #aaa;
+            font-size: 1.2rem;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(229,9,20,0.2);
+            border-top-color: #E50914;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 15px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .webtv-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                padding: 20px 4%;
+            }
+
+            .webtv-card-icon {
+                font-size: 3rem;
+                padding: 20px 15px;
+            }
+
+            .webtv-card-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container" onclick="goHome()">
+                <img src="banner.jpg" alt="IPTV PRO" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item" onclick="goHome()"><i class="fas fa-home"></i> Home</li>
+            </ul>
+            <div class="nav-actions">
+                <li class="nav-item nav-webtv" style="color: #E50914;"><i class="fas fa-globe"></i> Web TV</li>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="webtv-search" placeholder="Search platforms..." onkeyup="filterWebTV()">
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="webtv-container">
+        <div class="webtv-header">
+            <h1><i class="fas fa-globe"></i> Web TV Platforms</h1>
+            <a class="back-home-btn" href="index.html">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+
+        <div class="webtv-grid" id="webtv-grid">
+            <div class="loading-text">
+                <div class="loading-spinner"></div>
+                Loading Web TV Platforms...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optimized Platform List
+        const webTVPlatforms = [
+            {
+                name: "Web TV One",
+                desc: "SPORTS Live Channels",
+                icon: "fas fa-tv",
+                url: "https://obiramtvlive.pages.dev/"
+            },
+            {
+                name: "Web TV Two",
+                desc: "Live TV Streaming Platform",
+                icon: "fas fa-play-circle",
+                url: "https://vibes.pro.bd/"
+            },
+            {
+                name: "Web TV Three",
+                desc: "Bangla Channels Live",
+                icon: "fas fa-satellite",
+                url: "http://ryvoxtb.free.nf/"
+            },
+            {
+                name: "Web TV Four",
+                desc: "International Sports Live",
+                icon: "fas fa-globe",
+                url: "http://macstream.run.place"
+            },
+            {
+                name: "Web TV Five",
+                desc: "Live TV Platform",
+                icon: "fas fa-tv",
+                url: "http://103.144.89.251/"
+            },
+            {
+                name: "Web TV Six",
+                desc: "International Channels",
+                icon: "fas fa-tv",
+                url: "https://iptv.devsolux.net"
+            },
+            {
+                name: "Web TV Seven",
+                desc: "Live Channels Bangla",
+                icon: "fas fa-tv",
+                url: "https://ftpbdlive.com"
+            },
+            {
+                name: "Web TV Eight",
+                desc: "TV Bangla Live",
+                icon: "fas fa-tv",
+                url: "https://bongoflix.rf.gd/mirror/?i=1"
+            },
+            {
+                name: "Movies",
+                desc: "Movies & Series",
+                icon: "fas fa-tv",
+                url: "https://cinevo.site/"
+            },
+            {
+                name: "Bangla Movies",
+                desc: "Bengali Movies & Series",
+                icon: "fas fa-film",
+                url: "https://banglaplex.click/"
+            }
+        ];
+
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+
+        function openWebTV(url, name) {
+            // Open in in-app viewer
+            window.location.href = `viewer.html?url=${encodeURIComponent(url)}&title=${encodeURIComponent(name)}`;
+        }
+
+        // Performance Optimization: DocumentFragment for faster DOM insertion
+        function loadWebTVPlatforms(platforms = webTVPlatforms) {
+            const grid = document.getElementById('webtv-grid');
+            grid.innerHTML = '';
+            
+            const fragment = document.createDocumentFragment();
+
+            platforms.forEach(platform => {
+                const card = document.createElement('div');
+                card.className = 'webtv-card';
+                card.innerHTML = `
+                    <div class="webtv-card-icon">
+                        <i class="${platform.icon}"></i>
+                    </div>
+                    <div class="webtv-card-content">
+                        <div class="webtv-card-title">${platform.name}</div>
+                        <div class="webtv-card-desc">${platform.desc}</div>
+                        <button class="webtv-card-btn" onclick="openWebTV('${platform.url}', '${platform.name}')">
+                            <i class="fas fa-play"></i> Watch Now
+                        </button>
+                    </div>
+                `;
+                fragment.appendChild(card);
+            });
+            
+            grid.appendChild(fragment);
+        }
+
+        // Search Filter Optimization
+        function filterWebTV() {
+            const query = document.getElementById('webtv-search').value.toLowerCase();
+            const filtered = webTVPlatforms.filter(p => 
+                p.name.toLowerCase().includes(query) || 
+                p.desc.toLowerCase().includes(query)
+            );
+            loadWebTVPlatforms(filtered);
+        }
+
+        // Load platforms when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Small delay to ensure smooth rendering
+            setTimeout(loadWebTVPlatforms, 100);
+        });
+    </script>
+</body>
+</html>

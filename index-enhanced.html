@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#E50914">
+    <meta name="description" content="Experience the ultimate live TV streaming with our premium IPTV service.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IPTV PRO">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    <style>
+        /* Install Button Styling */
+        .install-app-btn-container {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.2) 0%, rgba(229, 9, 20, 0.1) 100%);
+            border: 1.5px solid rgba(229, 9, 20, 0.5);
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.2);
+            margin-right: 10px;
+            animation: pulse-red 2s infinite;
+        }
+
+        .install-app-btn-container:hover {
+            background: rgba(229, 9, 20, 0.3);
+            transform: scale(1.05);
+            border-color: #E50914;
+        }
+
+        .install-app-btn-container i {
+            color: #fff;
+            font-size: 1rem;
+            margin-right: 6px;
+        }
+
+        .install-app-btn-container span {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+        }
+
+        @media (max-width: 480px) {
+            .install-app-btn-container span {
+                display: none;
+            }
+            .install-app-btn-container {
+                padding: 8px;
+            }
+            .install-app-btn-container i {
+                margin-right: 0;
+            }
+        }
+
+        /* Navbar Center - Install Button */
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .nav-center {
+                position: relative;
+                left: auto;
+                transform: none;
+                margin: 0 auto;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-center {
+                margin: 0 5px;
+            }
+            .install-app-btn-container {
+                padding: 6px 10px;
+            }
+        }
+    </style>
+    <title>IPTV PRO ULTIMATE - Dashboard</title>
+    <link rel="stylesheet" href="style.css?v=33">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Desktop View: Show category tabs and action buttons */
+        @media (min-width: 481px) {
+            .navbar-categories-row {
+                display: flex !important; /* Show categories on desktop */
+                top: 70px !important;
+                z-index: 998 !important;
+            }
+            
+            .navbar-actions-row {
+                display: none !important; /* Hide mobile action row on desktop */
+            }
+
+            .nav-links {
+                display: flex !important;
+                gap: 15px !important;
+            }
+
+            .nav-action-btn-desktop {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 6px !important;
+                padding: 8px 16px !important;
+                background: linear-gradient(135deg, rgba(229, 9, 20, 0.15) 0%, rgba(229, 9, 20, 0.05) 100%) !important;
+                border: 1.5px solid rgba(229, 9, 20, 0.5) !important;
+                border-radius: 25px !important;
+                color: var(--primary-color) !important;
+                cursor: pointer !important;
+                font-size: 0.92rem !important;
+                font-weight: 700 !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                white-space: nowrap !important;
+                backdrop-filter: blur(10px) !important;
+                box-shadow: 0 4px 15px rgba(229, 9, 20, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+                letter-spacing: 0.5px !important;
+                margin-left: 10px !important;
+            }
+
+            .nav-action-btn-desktop:hover {
+                background: linear-gradient(135deg, rgba(229, 9, 20, 0.3) 0%, rgba(229, 9, 20, 0.15) 100%);
+                border-color: var(--primary-color);
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+                color: #FFD700;
+            }
+
+            .nav-action-btn-desktop.active {
+                background: linear-gradient(135deg, var(--primary-color) 0%, #c0070f 100%);
+                color: white;
+                border-color: #FFD700;
+                box-shadow: 0 0 20px rgba(229, 9, 20, 0.6), 0 0 40px rgba(229, 9, 20, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-action-btn-desktop i {
+                font-size: 1rem;
+            }
+
+            .hero-banner {
+                margin-top: 130px !important; /* Navbar + categories row */
+            }
+        }
+
+        /* Mobile View: Keep tabs at the bottom */
+        @media (max-width: 480px) {
+            .nav-action-btn-desktop {
+                display: none !important; /* Hide desktop action buttons on mobile */
+            }
+
+            .navbar-categories-row {
+                top: 70px !important;
+                padding: 4px 2% !important;
+                height: auto !important;
+                min-height: 80px !important;
+                display: flex !important;
+                align-items: center !important;
+                background: rgba(0, 0, 0, 0.95) !important;
+            }
+            
+            .navbar-actions-row {
+                position: fixed !important;
+                top: auto !important;
+                bottom: 0 !important; /* Tabs at the bottom for mobile */
+                left: 0 !important;
+                right: 0 !important;
+                height: auto !important;
+                min-height: 60px !important;
+                padding: 8px 2% !important;
+                background: rgba(0, 0, 0, 0.95) !important;
+                border-top: 1px solid rgba(229, 9, 20, 0.2) !important;
+                z-index: 999 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .hero-banner {
+                margin-top: 150px !important; /* Adjusted for mobile top nav only */
+            }
+
+            .nav-categories {
+                gap: 4px !important;
+                display: grid !important;
+                grid-template-columns: repeat(5, 1fr) !important;
+                overflow-x: visible !important;
+                overflow-y: visible !important;
+                scrollbar-width: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                flex-wrap: wrap !important;
+                padding: 4px 0 !important;
+            }
+            
+            .nav-category-item {
+                padding: 4px 2px !important;
+                font-size: 0.65rem !important;
+                min-height: 34px !important;
+                max-height: 34px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                flex: 1 1 20% !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                border-radius: 12px !important;
+                line-height: 1.1 !important;
+            }
+
+            .nav-actions-full {
+                justify-content: space-around !important;
+                gap: 8px !important;
+                padding: 0 !important;
+                display: flex !important;
+                width: 100% !important;
+            }
+
+            .nav-action-btn {
+                flex: 1 !important;
+                min-width: 0 !important;
+                padding: 8px 4px !important;
+                font-size: 0.7rem !important;
+                min-height: 44px !important;
+                gap: 4px !important;
+            }
+            
+            .channel-card img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+                max-height: 180px !important;
+                object-fit: contain !important;
+                object-position: center !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                margin: 0 auto !important;
+                padding: 10px !important;
+                display: block !important;
+            }
+            
+            .channel-card {
+                min-height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
+
+            .content-section {
+                padding-bottom: 80px !important; /* Space for bottom tabs */
+            }
+        }
+    </style>
+    <script>
+        // Register Service Worker with proper scope and update check
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js', { scope: './' })
+                    .then(reg => {
+                        console.log('Service Worker registered with scope:', reg.scope);
+                        // Check for updates periodically
+                        reg.update();
+                    })
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+
+        // PWA Install Logic - 100% Working Implementation
+        let deferredPrompt;
+        const installBtn = document.getElementById('install-app-btn');
+
+        function isAppInstalled() {
+            return window.matchMedia('(display-mode: standalone)').matches || 
+                   window.navigator.standalone === true || 
+                   localStorage.getItem('pwa_installed') === 'true';
+        }
+
+        function updateInstallButton() {
+            if (isAppInstalled()) {
+                if (installBtn) installBtn.style.display = 'none';
+            } else {
+                if (deferredPrompt && installBtn) {
+                    installBtn.style.display = 'flex';
+                }
+            }
+        }
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('PWA Install Prompt Ready');
+            updateInstallButton();
+        });
+
+        async function installApp() {
+            if (!deferredPrompt) {
+                if (isAppInstalled()) {
+                    alert('App is already installed!');
+                    if (installBtn) installBtn.style.display = 'none';
+                } else {
+                    alert('To install: Click your browser menu (3 dots) and select "Install App" or "Add to Home Screen".');
+                }
+                return;
+            }
+            
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response: ${outcome}`);
+            
+            if (outcome === 'accepted') {
+                localStorage.setItem('pwa_installed', 'true');
+                if (installBtn) installBtn.style.display = 'none';
+                deferredPrompt = null;
+            } else {
+                console.log('User dismissed install, keeping button visible.');
+            }
+        }
+
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('IPTV PRO was installed successfully');
+            localStorage.setItem('pwa_installed', 'true');
+            if (installBtn) installBtn.style.display = 'none';
+            deferredPrompt = null;
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                updateInstallButton();
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', updateInstallButton);
+    </script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container" onclick="showHome()">
+                <img src="banner.jpg" alt="IPTV PRO" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item" id="nav-home" onclick="showHome()"><i class="fas fa-home"></i> Home</li>
+                <!-- Desktop Action Buttons (Next to Home) -->
+                <button class="nav-action-btn-desktop nav-premium-desktop" onclick="showPremiumLive()" title="Premium Live">
+                    <i class="fas fa-crown"></i> Premium Live
+                </button>
+                <button class="nav-action-btn-desktop nav-webtv-desktop" onclick="showWebTV()" title="Open Web TV">
+                    <i class="fas fa-globe"></i> Web TV
+                </button>
+                <button class="nav-action-btn-desktop nav-mylist-desktop" onclick="showFavorites()" title="My Favorites">
+                    <i class="fas fa-heart"></i> My List
+                </button>
+                <button class="nav-action-btn-desktop" onclick="window.location.href='channel-manager.html'" title="Manage Channels">
+                    <i class="fas fa-cogs"></i> Channel Manager
+                </button>
+            </ul>
+        </div>
+        <div class="nav-center">
+            <div id="install-app-btn" class="install-app-btn-container" onclick="installApp()" title="Install App">
+                <i class="fas fa-cloud-download-alt"></i>
+                <span>Install App</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Search channels...">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation Bar (Categories - Desktop + Mobile) -->
+    <nav class="navbar-secondary navbar-categories-row">
+        <div class="nav-secondary-left">
+            <ul class="nav-categories" id="nav-categories">
+                <!-- Categories will be loaded here via JS -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tertiary Navigation Bar (Actions - Mobile Only, Bottom) -->
+    <nav class="navbar-secondary navbar-actions-row">
+        <div class="nav-secondary-right nav-actions-full">
+            <button class="nav-action-btn nav-premium" onclick="showPremiumLive()" title="Premium Live">
+                <i class="fas fa-crown"></i> Premium Live
+            </button>
+            <button class="nav-action-btn nav-webtv" onclick="showWebTV()" title="Open Web TV">
+                <i class="fas fa-globe"></i> Web TV
+            </button>
+            <button class="nav-action-btn nav-mylist" onclick="showFavorites()" title="My Favorites">
+                <i class="fas fa-heart"></i> My List
+            </button>
+            <button class="nav-action-btn" onclick="window.location.href='channel-manager.html'" title="Channel Manager">
+                <i class="fas fa-cogs"></i> Manager
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero-banner" id="main-hero">
+        <div class="hero-content">
+            <h1 id="hero-title">IPTV ULTRA PRO</h1>
+            <p id="hero-desc">Experience the ultimate live TV streaming with our premium IPTV service. Watch your favorite channels in crystal clear HD quality.</p>
+            <div class="developer-tag">
+                <div style="font-size: 1.2rem; font-weight: 900; letter-spacing: 1px;">🎯 FEROZ MOLLA</div>
+                <div style="font-size: 0.85rem; font-style: italic; margin-top: 5px; color: #B3B3B3; font-weight: 400;">Founder & CEO @ Digital Future Academy</div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn-play" onclick="playFirstChannel()"><i class="fas fa-play"></i> Play Now</button>
+                <button class="btn-info" onclick="showPremiumLive()"><i class="fas fa-crown"></i> Premium Live</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2 id="section-title">Trending Now</h2>
+        <div id="channels" class="channel-grid">
+            <!-- Channels will be loaded here via JS -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i> Loading Channels...
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 IPTV PRO ULTIMATE. All rights reserved.</p>
+        <p style="margin-top: 10px; color: #E50914; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.5px;">🎯 FEROZ MOLLA</p>
+        <p style="margin-top: 5px; color: #B3B3B3; font-style: italic; font-size: 0.9rem; font-weight: 400;">Founder & CEO @ Digital Future Academy</p>
+    </footer>
+
+    <script src="app-enhanced.js?v=34"></script>
+</body>
+</html>

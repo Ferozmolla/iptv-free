@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E50914">
+    <title>IPTV PRO Player</title>
+    <link rel="stylesheet" href="style.css?v=33">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@latest/dist/shaka-player.compiled.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .player-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+        }
+
+        .player-header {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .player-back-btn {
+            background: rgba(229, 9, 20, 0.3);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .player-back-btn:hover {
+            background: rgba(229, 9, 20, 0.6);
+            transform: scale(1.1);
+        }
+
+        .player-title {
+            color: white;
+            font-weight: bold;
+            flex: 1;
+            margin-left: 15px;
+            font-size: 1.1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .player-info {
+            background: rgba(229, 9, 20, 0.2);
+            border: 1px solid rgba(229, 9, 20, 0.4);
+            color: #E50914;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        #player-wrapper {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 50;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(229, 9, 20, 0.2);
+            border-top-color: #E50914;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        #error-msg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(244, 67, 54, 0.2);
+            border: 2px solid #f44336;
+            color: #f44336;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 50;
+            max-width: 90%;
+            display: none;
+        }
+
+        #err-detail {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .player-controls {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .control-btn {
+            background: rgba(229, 9, 20, 0.3);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .control-btn:hover {
+            background: rgba(229, 9, 20, 0.6);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .player-title {
+                font-size: 0.9rem;
+            }
+
+            .player-info {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+            }
+
+            .control-btn {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="player-header">
+            <button class="player-back-btn" onclick="goBackToDashboard()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="player-title" id="player-title">Loading...</div>
+            <div class="player-info">
+                <i class="fas fa-signal"></i>
+                <span id="network-status">Detecting...</span>
+            </div>
+        </div>
+
+        <div id="player-wrapper"></div>
+
+        <div id="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading stream...</p>
+        </div>
+
+        <div id="error-msg">
+            <h3><i class="fas fa-exclamation-circle"></i> Playback Error</h3>
+            <div id="err-detail"></div>
+            <button class="control-btn" onclick="goBackToDashboard()" style="margin-top: 15px;">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </button>
+        </div>
+
+        <div class="player-controls">
+            <button class="control-btn" onclick="goBackToDashboard()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button class="control-btn" onclick="reloadStream()">
+                <i class="fas fa-redo"></i> Reload
+            </button>
+            <button class="control-btn" onclick="toggleFullscreen()">
+                <i class="fas fa-expand"></i> Fullscreen
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // নেটওয়ার্ক স্ট্যাটাস ডিটেকশন
+        function updateNetworkStatus() {
+            const statusEl = document.getElementById('network-status');
+            if ('connection' in navigator) {
+                const connection = navigator.connection;
+                const effectiveType = connection.effectiveType;
+                
+                let status = '';
+                let icon = '';
+                
+                if (effectiveType === '4g') {
+                    status = 'Fast (4G)';
+                    icon = '🟢';
+                } else if (effectiveType === '3g') {
+                    status = 'Normal (3G)';
+                    icon = '🟡';
+                } else if (effectiveType === '2g' || effectiveType === 'slow-2g') {
+                    status = 'Slow (2G)';
+                    icon = '🔴';
+                } else {
+                    status = effectiveType;
+                    icon = '❓';
+                }
+                
+                statusEl.textContent = `${icon} ${status}`;
+            }
+        }
+
+        function reloadStream() {
+            location.reload();
+        }
+
+        function toggleFullscreen() {
+            const wrapper = document.getElementById('player-wrapper');
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                wrapper.requestFullscreen().catch(err => {
+                    console.log('Fullscreen request failed:', err);
+                });
+            }
+        }
+
+        function goBackToDashboard() {
+            const lastView = localStorage.getItem('lastView') || 'home';
+            const lastCategory = localStorage.getItem('lastCategory') || 'Home';
+            
+            window.location.href = `index-enhanced.html?view=${lastView}&category=${lastCategory}`;
+        }
+
+        // Initialize network status on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateNetworkStatus();
+            
+            // Update network status every 5 seconds
+            setInterval(updateNetworkStatus, 5000);
+        });
+    </script>
+
+    <script src="player-enhanced.js?v=35"></script>
+</body>
+</html>

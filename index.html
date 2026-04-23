@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#050505">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>IPTV PRO - Powered by FEROZ MOLLA | Digital Future Academy</title>
+    <link rel="stylesheet" href="style.css?v=50">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Install Button Styling */
+        .install-app-btn-container {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #E50914 0%, #ff4d4d 100%);
+            border: 2px solid #fff;
+            border-radius: 30px;
+            padding: 8px 18px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.5);
+            margin-right: 10px;
+            animation: pulse-red-intense 1.5s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .install-app-btn-container:hover {
+            background: linear-gradient(135deg, #ff4d4d 0%, #E50914 100%);
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.7);
+        }
+
+        @keyframes pulse-red-intense {
+            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(229, 9, 20, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+        }
+
+        .install-app-btn-container i {
+            color: #fff;
+            font-size: 1rem;
+            margin-right: 6px;
+        }
+
+        .install-app-btn-container span {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+        }
+
+        @media (max-width: 480px) {
+            .install-app-btn-container span {
+                display: inline;
+                font-size: 0.75rem;
+            }
+            .install-app-btn-container {
+                padding: 6px 12px;
+            }
+            .install-app-btn-container i {
+                margin-right: 4px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Navbar Center - Install Button */
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .nav-center {
+                position: relative;
+                left: auto;
+                transform: none;
+                margin: 0 auto;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-center {
+                margin: 0 5px;
+            }
+            .install-app-btn-container {
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container" onclick="showHome()" title="Click to go back to home">
+                <img src="icon-192x192.png" alt="IPTV PRO - Click to go home" class="nav-logo">
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Search channels...">
+            </div>
+        </div>
+        <div class="nav-center">
+            <div id="install-app-btn" class="install-app-btn-container" onclick="installApp()" title="Install App">
+                <i class="fas fa-cloud-download-alt"></i>
+                <span>Install App</span>
+            </div>
+        </div>
+        <div class="nav-right">
+        </div>
+    </nav>
+
+    <!-- Category Bar - শুধুমাত্র ১০টি ক্যাটাগরি -->
+    <div class="category-bar">
+        <div class="category-list" id="category-list">
+            <!-- Categories will be injected here -->
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner" id="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Pro Level Streaming</div>
+            <h1 class="hero-title" id="hero-title">Unlimited Live TV</h1>
+            <p class="hero-desc" id="hero-desc">Experience high-speed streaming with zero buffering. Optimized for Smart TV, Mobile, and PC.</p>
+            <div class="hero-branding-wrapper">
+                <div class="hero-branding">
+                    <div class="founder-name">FEROZ MOLLA</div>
+                    <div class="founder-title">Founder & CEO @ Digital Future Academy</div>
+                </div>
+                <div class="hero-buttons">
+                    <div id="dynamic-tabs-container" class="dynamic-tabs-container">
+                        <!-- Dynamic channel tabs will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content-section">
+        <div class="section-header">
+            <h2 class="section-title" id="current-view-title">Featured Channels</h2>
+        </div>
+        <div class="channel-grid" id="channels">
+            <!-- Channels will be injected here -->
+        </div>
+    </main>
+
+    <!-- Popup Menu Modal -->
+    <div id="channel-popup-modal" class="channel-popup-modal">
+        <div class="popup-overlay" onclick="closeChannelPopup()"></div>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2 id="popup-title"></h2>
+                <button class="popup-close" onclick="closeChannelPopup()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="popup-channels" id="popup-channels-list"></div>
+        </div>
+    </div>
+
+    <!-- Footer Navigation - Ultra Premium Design (4 Tabs) -->
+    <nav class="footer-nav">
+        <div class="footer-tab premium-tab active" id="tab-premium" onclick="showPremiumLive()">
+            <div class="tab-icon-wrapper">
+                <i class="fas fa-crown"></i>
+            </div>
+            <span class="tab-label">Premium Live</span>
+        </div>
+        <div class="footer-tab" id="tab-webtv" onclick="window.location.href='webtv.html'">
+            <div class="tab-icon-wrapper">
+                <i class="fas fa-tv"></i>
+            </div>
+            <span class="tab-label">Web TV</span>
+        </div>
+        <div class="footer-tab" id="tab-fav" onclick="showFavorites()">
+            <div class="tab-icon-wrapper">
+                <i class="fas fa-heart"></i>
+            </div>
+            <span class="tab-label">My List</span>
+        </div>
+        <div class="footer-tab" id="tab-manager" onclick="window.location.href='channel-manager.html'">
+            <div class="tab-icon-wrapper">
+                <i class="fas fa-cog"></i>
+            </div>
+            <span class="tab-label">Manager</span>
+        </div>
+    </nav>
+
+    <script src="app.js?v=50"></script>
+    <script>
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => {
+                    console.log('SW registered');
+                }).catch(err => {
+                    console.log('SW registration failed: ', err);
+                });
+            });
+        }
+
+        // PWA Install Logic - 100% Working Implementation
+        let deferredPrompt;
+        const installBtn = document.getElementById('install-app-btn');
+
+        function isAppInstalled() {
+            return window.matchMedia('(display-mode: standalone)').matches || 
+                   window.navigator.standalone === true || 
+                   localStorage.getItem('pwa_installed') === 'true';
+        }
+
+        function updateInstallButton() {
+            if (isAppInstalled()) {
+                if (installBtn) installBtn.style.display = 'none';
+            } else {
+                // If not installed, we want it to be visible if the prompt is ready
+                if (deferredPrompt && installBtn) {
+                    installBtn.style.display = 'flex';
+                }
+            }
+        }
+
+        // Initial check
+        updateInstallButton();
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('PWA Install Prompt Ready');
+            updateInstallButton();
+        });
+
+        async function installApp() {
+            if (!deferredPrompt) {
+                // If prompt is not available, it might be because:
+                // 1. Already installed
+                // 2. Browser doesn't support PWA
+                // 3. Not served over HTTPS
+                if (isAppInstalled()) {
+                    alert('App is already installed!');
+                    if (installBtn) installBtn.style.display = 'none';
+                } else {
+                    alert('To install: Click your browser menu (3 dots) and select "Install App" or "Add to Home Screen".');
+                }
+                return;
+            }
+            
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response: ${outcome}`);
+            
+            if (outcome === 'accepted') {
+                localStorage.setItem('pwa_installed', 'true');
+                if (installBtn) installBtn.style.display = 'none';
+                deferredPrompt = null;
+            } else {
+                console.log('User dismissed install, keeping button visible.');
+                // Keep the button visible as requested
+            }
+        }
+
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('IPTV PRO was installed successfully');
+            localStorage.setItem('pwa_installed', 'true');
+            if (installBtn) installBtn.style.display = 'none';
+            deferredPrompt = null;
+        });
+
+        // Check periodically or on visibility change
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                updateInstallButton();
+            }
+        });
+    </script>
+</body>
+</html>

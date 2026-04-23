@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E50914">
+    <title>Quick Start - IPTV PRO</title>
+    <link rel="stylesheet" href="style.css?v=33">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(229, 9, 20, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #E50914;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .navbar-links a:hover {
+            color: #E50914;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #E50914 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #B3B3B3;
+            margin-bottom: 30px;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .option-card {
+            background: rgba(229, 9, 20, 0.1);
+            border: 2px solid rgba(229, 9, 20, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .option-card:hover {
+            border-color: #E50914;
+            background: rgba(229, 9, 20, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+        }
+        
+        .option-icon {
+            font-size: 3rem;
+            color: #E50914;
+            margin-bottom: 15px;
+        }
+        
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .option-desc {
+            color: #B3B3B3;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #E50914 0%, #c0070f 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(229, 9, 20, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(229, 9, 20, 0.2);
+            color: #E50914;
+            border: 2px solid #E50914;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(229, 9, 20, 0.3);
+        }
+        
+        .features {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .features h2 {
+            color: #E50914;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #E50914;
+            flex-shrink: 0;
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .feature-text h3 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .feature-text p {
+            color: #B3B3B3;
+            font-size: 0.9rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #0a0e27;
+            border: 2px solid #E50914;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #E50914;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-title {
+            color: #E50914;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-right: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #E50914;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #E50914;
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .modal-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-buttons .btn-submit {
+            background: linear-gradient(135deg, #E50914 0%, #c0070f 100%);
+            color: white;
+        }
+        
+        .modal-buttons .btn-cancel {
+            background: rgba(229, 9, 20, 0.2);
+            color: #E50914;
+            border: 1px solid #E50914;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert.success {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+        
+        .alert.error {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+            border: 1px solid #f44336;
+        }
+        
+        .alert.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .features {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-play-circle"></i> IPTV PRO
+        </div>
+        <div class="navbar-links">
+            <a href="index-enhanced.html"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="channel-manager.html"><i class="fas fa-cogs"></i> Manager</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="hero">
+            <h1><i class="fas fa-rocket"></i> Quick Start</h1>
+            <p>দ্রুত শুরু করুন - M3U ফাইল ছাড়াই সরাসরি চ্যানেল যোগ করুন</p>
+        </div>
+
+        <!-- Alert -->
+        <div id="alert" class="alert"></div>
+
+        <!-- Options Grid -->
+        <div class="options-grid">
+            <!-- Option 1: Manual Entry -->
+            <div class="option-card" onclick="openManualModal()">
+                <div class="option-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="option-title">ম্যানুয়াল এন্ট্রি</div>
+                <div class="option-desc">
+                    একটি চ্যানেল ফর্মে সরাসরি যোগ করুন। নাম, URL এবং লোগো দিন।
+                </div>
+                <button class="btn btn-secondary">শুরু করুন</button>
+            </div>
+
+            <!-- Option 2: JSON Import -->
+            <div class="option-card" onclick="openJsonModal()">
+                <div class="option-icon">
+                    <i class="fas fa-upload"></i>
+                </div>
+                <div class="option-title">JSON ইমপোর্ট</div>
+                <div class="option-desc">
+                    JSON ফরম্যাটে একাধিক চ্যানেল একসাথে যোগ করুন।
+                </div>
+                <button class="btn btn-secondary">ইমপোর্ট করুন</button>
+            </div>
+
+            <!-- Option 3: Sample Channels -->
+            <div class="option-card" onclick="addSampleChannels()">
+                <div class="option-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="option-title">নমুনা চ্যানেল</div>
+                <div class="option-desc">
+                    পরীক্ষার জন্য কিছু নমুনা চ্যানেল যোগ করুন।
+                </div>
+                <button class="btn btn-secondary">যোগ করুন</button>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <h2><i class="fas fa-star"></i> নতুন ফিচারগুলো</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-wifi"></i></div>
+                    <div class="feature-text">
+                        <h3>স্লো নেটওয়ার্ক সাপোর্ট</h3>
+                        <p>স্বয়ংক্রিয়ভাবে কম বিটরেট স্ট্রিম নির্বাচন করে</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="feature-text">
+                        <h3>দ্রুত লোডিং</h3>
+                        <p>প্রগ্রেসিভ পার্সিং দিয়ে ৬০% দ্রুত</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-database"></i></div>
+                    <div class="feature-text">
+                        <h3>লোকাল স্টোরেজ</h3>
+                        <p>ইন্টারনেট ছাড়াই চ্যানেল অ্যাক্সেস করুন</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-sync"></i></div>
+                    <div class="feature-text">
+                        <h3>সহজ সিঙ্ক</h3>
+                        <p>JSON এক্সপোর্ট দিয়ে ব্যাকআপ করুন</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="feature-text">
+                        <h3>মোবাইল অপটিমাইজড</h3>
+                        <p>সব ডিভাইসে নিখুঁত কাজ করে</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="feature-text">
+                        <h3>নিরাপদ</h3>
+                        <p>সব ডেটা লোকালি সংরক্ষিত থাকে</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div style="text-align: center; margin-top: 40px;">
+            <h2 style="color: #E50914; margin-bottom: 20px;">পরবর্তী পদক্ষেপ</h2>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="index-enhanced.html" class="btn">
+                    <i class="fas fa-arrow-right"></i> ড্যাশবোর্ডে যান
+                </a>
+                <a href="channel-manager.html" class="btn btn-secondary">
+                    <i class="fas fa-cogs"></i> চ্যানেল ম্যানেজার খুলুন
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manual Entry Modal -->
+    <div id="manualModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeManualModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-title">নতুন চ্যানেল যোগ করুন</div>
+            
+            <div class="form-group">
+                <label for="manualName">চ্যানেলের নাম *</label>
+                <input type="text" id="manualName" placeholder="যেমন: BBC News">
+            </div>
+            
+            <div class="form-group">
+                <label for="manualUrl">স্ট্রিম URL *</label>
+                <input type="url" id="manualUrl" placeholder="যেমন: https://example.com/stream.m3u8">
+            </div>
+            
+            <div class="form-group">
+                <label for="manualLogo">লোগো URL</label>
+                <input type="url" id="manualLogo" placeholder="যেমন: https://example.com/logo.png">
+            </div>
+            
+            <div class="form-group">
+                <label for="manualCategory">ক্যাটাগরি</label>
+                <input type="text" id="manualCategory" placeholder="যেমন: News Channels">
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn-submit" onclick="saveManualChannel()">যোগ করুন</button>
+                <button class="btn-cancel" onclick="closeManualModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON Import Modal -->
+    <div id="jsonModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeJsonModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-title">JSON থেকে ইমপোর্ট করুন</div>
+            
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.85rem;">
+                <strong>ফরম্যাট:</strong>
+                <pre style="overflow-x: auto; margin: 10px 0 0 0;">
+[
+  {
+    "name": "BBC News",
+    "url": "https://example.com/stream.m3u8",
+    "logo": "https://example.com/logo.png",
+    "category": "News"
+  }
+]</pre>
+            </div>
+            
+            <div class="form-group">
+                <label for="jsonInput">JSON ডেটা পেস্ট করুন:</label>
+                <textarea id="jsonInput" placeholder="আপনার JSON ডেটা এখানে পেস্ট করুন..."></textarea>
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn-submit" onclick="importJsonChannels()">ইমপোর্ট করুন</button>
+                <button class="btn-cancel" onclick="closeJsonModal()">বাতিল করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openManualModal() {
+            document.getElementById('manualModal').classList.add('active');
+        }
+
+        function closeManualModal() {
+            document.getElementById('manualModal').classList.remove('active');
+            document.getElementById('manualName').value = '';
+            document.getElementById('manualUrl').value = '';
+            document.getElementById('manualLogo').value = '';
+            document.getElementById('manualCategory').value = '';
+        }
+
+        function openJsonModal() {
+            document.getElementById('jsonModal').classList.add('active');
+        }
+
+        function closeJsonModal() {
+            document.getElementById('jsonModal').classList.remove('active');
+            document.getElementById('jsonInput').value = '';
+        }
+
+        // Alert Function
+        function showAlert(message, type = 'success') {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert ${type} active`;
+            setTimeout(() => {
+                alert.classList.remove('active');
+            }, 3000);
+        }
+
+        // Save Manual Channel
+        function saveManualChannel() {
+            const name = document.getElementById('manualName').value;
+            const url = document.getElementById('manualUrl').value;
+            const logo = document.getElementById('manualLogo').value;
+            const category = document.getElementById('manualCategory').value || 'Custom';
+
+            if (!name || !url) {
+                showAlert('চ্যানেলের নাম এবং URL প্রয়োজন!', 'error');
+                return;
+            }
+
+            let channels = JSON.parse(localStorage.getItem('custom_channels')) || [];
+            
+            if (channels.some(ch => ch.url === url)) {
+                showAlert('এই URL ইতিমধ্যে বিদ্যমান!', 'error');
+                return;
+            }
+
+            channels.push({ name, url, logo, category });
+            localStorage.setItem('custom_channels', JSON.stringify(channels));
+            
+            showAlert(`"${name}" সফলভাবে যোগ করা হয়েছে!`, 'success');
+            closeManualModal();
+        }
+
+        // Import JSON Channels
+        function importJsonChannels() {
+            const jsonInput = document.getElementById('jsonInput').value;
+
+            try {
+                const channels = JSON.parse(jsonInput);
+                if (!Array.isArray(channels)) {
+                    showAlert('JSON একটি অ্যারে হতে হবে!', 'error');
+                    return;
+                }
+
+                let existing = JSON.parse(localStorage.getItem('custom_channels')) || [];
+                let imported = 0;
+
+                channels.forEach(ch => {
+                    if (ch.name && ch.url) {
+                        if (!existing.some(e => e.url === ch.url)) {
+                            existing.push({
+                                name: ch.name,
+                                url: ch.url,
+                                logo: ch.logo || '',
+                                category: ch.category || 'Imported'
+                            });
+                            imported++;
+                        }
+                    }
+                });
+
+                localStorage.setItem('custom_channels', JSON.stringify(existing));
+                showAlert(`${imported}টি চ্যানেল সফলভাবে ইমপোর্ট করা হয়েছে!`, 'success');
+                closeJsonModal();
+            } catch (error) {
+                showAlert(`JSON এরর: ${error.message}`, 'error');
+            }
+        }
+
+        // Add Sample Channels
+        function addSampleChannels() {
+            const samples = [
+                {
+                    name: "Test Channel 1",
+                    url: "https://example.com/test1.m3u8",
+                    logo: "https://via.placeholder.com/300x150/E50914/fff?text=Test+1",
+                    category: "Test"
+                },
+                {
+                    name: "Test Channel 2",
+                    url: "https://example.com/test2.m3u8",
+                    logo: "https://via.placeholder.com/300x150/E50914/fff?text=Test+2",
+                    category: "Test"
+                }
+            ];
+
+            let existing = JSON.parse(localStorage.getItem('custom_channels')) || [];
+            let added = 0;
+
+            samples.forEach(ch => {
+                if (!existing.some(e => e.url === ch.url)) {
+                    existing.push(ch);
+                    added++;
+                }
+            });
+
+            localStorage.setItem('custom_channels', JSON.stringify(existing));
+            showAlert(`${added}টি নমুনা চ্যানেল যোগ করা হয়েছে!`, 'success');
+        }
+
+        // Close modals on background click
+        window.addEventListener('click', (e) => {
+            const manualModal = document.getElementById('manualModal');
+            const jsonModal = document.getElementById('jsonModal');
+            
+            if (e.target === manualModal) closeManualModal();
+            if (e.target === jsonModal) closeJsonModal();
+        });
+    </script>
+</body>
+</html>
