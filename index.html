@@ -213,13 +213,21 @@
 
     <script src="app.js?v=50"></script>
     <script>
-        // Service Worker Registration
+        // Service Worker Registration - Main + Proxy
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
+                // Register main service worker
                 navigator.serviceWorker.register('sw.js').then(reg => {
-                    console.log('SW registered');
+                    console.log('Main SW registered');
                 }).catch(err => {
-                    console.log('SW registration failed: ', err);
+                    console.log('Main SW registration failed: ', err);
+                });
+                
+                // Register proxy service worker for HTTP stream interception
+                navigator.serviceWorker.register('sw-proxy.js').then(reg => {
+                    console.log('Proxy SW registered - HTTP streams will be intercepted');
+                }).catch(err => {
+                    console.log('Proxy SW registration failed: ', err);
                 });
             });
         }
