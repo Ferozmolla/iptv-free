@@ -147,6 +147,40 @@ http://103.180.212.191:3500/live/538.m3u8
 https://live.topnews.co.th/hls/topnews_a_720.m3u8
 
 # ===== Kids TV =====
+#EXTINF:-1 tvg-id="e73ffada-f80a-4c23-9bd8-76142e41c389" tvg-logo="https://s3.aynaott.com/storage/a89142109d049ae325fd1681b50bfffb" group-title="Kids TV", Cartoon Network
+https://tvsen5.aynaott.com/cartoonnetwork/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=f507afe0a1e8d2bc571aa723fc013e56
+#EXTINF:-1 tvg-id="a9791899-66f2-4b94-9521-c333498f7ab9" tvg-logo="https://s3.aynaott.com/storage/31a070024b6516e3738baec70168f0b6" group-title="Kids TV", Disney JR
+https://tvsen7.aynaott.com/disneyjr/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=99cbc265577e2ec5bf149f3e309b7919
+#EXTINF:-1 tvg-id="3830c379-539b-4e18-9943-9664574c850b" tvg-logo="https://s3.aynaott.com/storage/a130687320f6b07db4bc3729b9d5e96e" group-title="Kids TV", Nicktoons
+https://tvsen5.aynaott.com/nicktoons/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=9fee5f3c6b5bd9c91971d014e842d7cc
+#EXTINF:-1 tvg-id="c197b1bc-8909-4176-a50f-f855a4a51c1f" tvg-logo="https://s3.aynaott.com/storage/921409bfe77e2e3d32492116bc22fa3e" group-title="Kids TV", Nickjr
+https://tvsen5.aynaott.com/nickjr/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=4589c32135fd79f547ae528d16a4259a
+#EXTINF:-1 tvg-id="6aa7469a-89a8-4c46-a141-90fe1fff7893" tvg-logo="https://s3.aynaott.com/storage/3f7983c0bc7cacd206dd195a2eff6b10" group-title="Kids TV", Discovery Family
+https://tvsen5.aynaott.com/discoveryfamily/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=24d9caad4b80d693088f5c61d9efb002
+#EXTINF:-1 tvg-id="1d7ad29d-ee4d-4590-a446-7db6d6aea230" tvg-logo="https://s3.aynaott.com/storage/a0c74b576321da5aa33a69806401caf1" group-title="Kids TV", Disney Channel
+https://tvsen7.aynaott.com/disney/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=07fec56a93e9661dc3c6e1cb517adb90
+#EXTINF:-1 tvg-id="1f6fd722-dea2-4463-8938-81e6bdc94189" tvg-logo="https://s3.aynaott.com/storage/f9b945284524683f1de8beb07ded8989" group-title="Kids TV", Disney XD
+https://tvsen5.aynaott.com/disneyxd/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=76f5b212dc0ba355e81c95f0471d3d2b
+#EXTINF:-1 tvg-id="d188a20a-8640-4511-a228-3a141c675629" tvg-logo="https://s3.aynaott.com/storage/ca9edd253c97a2c67fcd856f43a31702" group-title="Kids TV", Family JR
+https://tvsen5.aynaott.com/familyjr/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=0ca4f4272d512892b5d95d66c7280c0c
+#EXTINF:-1 tvg-id="d8c19a31-9752-40cd-a392-fb95928a66b8" tvg-logo="https://s3.aynaott.com/storage/bb2375af2d1ff8666f2c24fbcec3c541" group-title="Kids TV", Nickelodeon
+https://tvsen7.aynaott.com/nicklodean/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=cdc73e56b498163df0c9fcdca6c5e999
+#EXTINF:-1 tvg-id="319225e9-8bd9-4848-a93b-fd5737809b0c" tvg-logo="https://s3.aynaott.com/storage/5739277278d596533abbacc60ea694be" group-title="Kids TV", Teen Nick
+https://tvsen7.aynaott.com/teennick/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=18574974dd5d08f4ea6f13a58517c374
+#EXTINF:-1 tvg-id="1486a1c3-9efe-48f7-8c7a-fe61a939d60a" tvg-logo="https://s3.aynaott.com/storage/c6fde511a99e5134dbf12b77da386cb6" group-title="Kids TV", TVCARiB Kids & Teens
+https://cdn.mycloudstream.io/hls/live/broadcast/nro19k2h/index.m3u8
+#EXTINF:-1 tvg-id="79242874-bae7-449f-aec0-2bfe9593c694" tvg-logo="https://s3.aynaott.com/storage/bc2a021f901e4d1de4948f314536c1bf" group-title="Kids TV", Kids Pang TV
+https://newidco-kidspangtv-1-us.roku.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="a8b5e07e-b775-415f-b71f-9391bacc9e30" tvg-logo="https://s3.aynaott.com/storage/6712a3c8a28689cfda4148faf095fa67" group-title="Kids TV", Dios Te Ve Kids
+https://s.emisoras.tv:8081/diostevekids/index.m3u8
+#EXTINF:-1 tvg-id="240c79af-7625-4384-9052-88dd73134ea1" tvg-logo="https://s3.aynaott.com/storage/d9b8deaf735ee0954260c7b3b61f508d" group-title="Kids TV", Moonbug Kids
+https://tvsen6.aynaott.com/MoonbugKids/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=8d0a03bc26800689bb11d9e3fe4a7e8e
+#EXTINF:-1 tvg-id="8a87e892-cbf1-4361-8d46-06cce682c902" tvg-logo="https://s3.aynaott.com/storage/76e36f75bf11c815a76c5622d627c814" group-title="Kids TV", 3ABN Kids
+https://tvsen6.aynaott.com/3abnkids/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=11a5b1dac2efab122e9616ce4bf6649b
+#EXTINF:-1 tvg-id="02653ebb-8b8b-4812-92d0-8ecff656fc3f" tvg-logo="https://s3.aynaott.com/storage/e15930189f48df6d429c269bd1edea99" group-title="Kids TV", PBS Kids
+https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8
+#EXTINF:-1 tvg-id="79c26f90-3a3e-43eb-9173-1c78bbbd5013" tvg-logo="https://s3.aynaott.com/storage/f7bfca4f0a3860067bf2eac37f41214c" group-title="Kids TV", Sony ATTH
+https://live20.bozztv.com/giatvplayout7/giatv-209611/index.m3u8
 #EXTINF:-1 tvg-id="13Kids.cl@SD" tvg-logo="https://i.imgur.com/8WJUbSD.png" group-title="Kids TV",13 Kids (1080p)
 https://origin.dpsgo.com/ssai/event/LhHrVtyeQkKZ-Ye_xEU75g/master.m3u8
 #EXTINF:-1 tvg-id="3ABNKids.us@SD" tvg-logo="https://i.imgur.com/z3npqO1.png" group-title="Kids TV",3ABN Kids Network
@@ -1955,6 +1989,28 @@ https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8
 https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index_3.m3u8
 #EXTINF:-1 tvg-id="1092effd-ec5f-4842-a9eb-09db84a23415" tvg-logo="https://s3.aynaott.com/storage/2b00567c538d392c8050124f0064c4a1" group-title="India", Enter 10 Bangla
 https://live-bangla.akamaized.net/liveabr/playlist.m3u8
+#EXTINF:-1 tvg-id="30c01099-08c9-45d3-91b2-572ca4c173eb" tvg-logo="https://s3.aynaott.com/storage/09e356a3181cc613cf5680619d50a5f5" group-title="India", Network 10
+https://tvsen6.aynaott.com/Network10/index.m3u8?e=1779178088&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=1214ea4bfda4fab3090edfcc18e42617
+#EXTINF:-1 tvg-id="dbefbb0b-b2e0-4e34-8108-8852d53ee766" tvg-logo="https://s3.aynaott.com/storage/5d052254516639955d06182690d3fda2" group-title="India", 9X Tashan
+https://tvsen6.aynaott.com/9X_Tashan/index.m3u8?e=1779178089&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=126d36e1eef5aeecdd8c414e42db4877
+#EXTINF:-1 tvg-id="da617cc0-9209-434c-9156-0f9387182a3f" tvg-logo="https://s3.aynaott.com/storage/d2d8f00a60dc64dad6c0181cd86f7869" group-title="India", 9x Jalwa
+https://tvsen6.aynaott.com/9xjalwa/index.m3u8?e=1779178089&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=48c8ddfb2057f1aa1103ea262b4466ef
+#EXTINF:-1 tvg-id="6a3da04b-dacc-441f-9549-71da39b5af07" tvg-logo="https://s3.aynaott.com/storage/20c3a2638df99ece9eb12aabfc03a8c3" group-title="India", Music India
+https://cdn-2.pishow.tv/live/226/master.m3u8
+#EXTINF:-1 tvg-id="b80579f2-22d3-4b12-881e-60139810a791" tvg-logo="https://s3.aynaott.com/storage/e92e9e2fb70909f3dd30a8d89e644119" group-title="India", Goldmines Bollywood
+https://tvsen6.aynaott.com/GoldminesBollywood/index.m3u8
+#EXTINF:-1 tvg-id="56217203-21d2-4ca8-af74-b5b037a6f7f0" tvg-logo="https://s3.aynaott.com/storage/cb1c3e153b951760fb0396cd27b8a715" group-title="India", Dangal
+https://tvsen6.aynaott.com/Dangal/index.m3u8?e=1779178089&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d6ed686ec8c628a8949e98100687951b
+#EXTINF:-1 tvg-id="2571fc63-ed1e-4107-b92d-bd4335d601dc" tvg-logo="https://s3.aynaott.com/storage/c63628e7301ba1eded68c0f75ab8d903" group-title="India", Shemaroo TV
+https://cdn-3.pishow.tv/live/230/master.m3u8
+#EXTINF:-1 tvg-id="f9f17a87-2cef-4639-9788-f26422ac7fbe" tvg-logo="https://s3.aynaott.com/storage/01c9cb3e1a4c90da6685700da863f0ce" group-title="India", Taaza TV
+https://tvsen7.aynaott.com/TaazaTV/index.m3u8?e=1779178089&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d96f8ac2b659fc4111ed0730cc8c3b0c
+#EXTINF:-1 tvg-id="353f1b20-3f65-4477-8251-6c3c58a3a12e" tvg-logo="https://s3.aynaott.com/storage/f4edcca7247bbb4a263a51d7ebb82282" group-title="India", Dhinchaak
+https://tvsen6.aynaott.com/Dhinchaak/index.m3u8?e=1779178089&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=b96f0d5be07cbdef4ff0ab959e25e818
+#EXTINF:-1 tvg-id="4d5c3f29-c835-4920-8fa0-c0bafeaa31ed" tvg-logo="https://s3.aynaott.com/storage/3132515182ec50091b496fe515564084" group-title="India", Hindi Movie Classic 24
+https://vods2.aynaott.com/hindimovies/index.m3u8
+#EXTINF:-1 tvg-id="960d0db1-3409-49b7-87da-61fe83fa2d8b" tvg-logo="https://s3.aynaott.com/storage/1a62a70103bac9999411a72b8a8b7ccc" group-title="India", Manoranjan TV
+https://tvsen6.aynaott.com/ManoranjanTV/index.m3u8?e=1779178089&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=42cc36bcd10411602ade80846e9e1a16
 #EXTINF:-1 group-title="India",CNBC TV18 Prime
 https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8
 #EXTINF:-1 group-title="India",Colors HD
