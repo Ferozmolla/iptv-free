@@ -1764,6 +1764,72 @@ https://tv91.hostingnuclear.com:19360/xhunestv/xhunestv.m3u8
 # ===== Bangladesh =====
 #EXTINF:-1 group-title="Bangladesh",Channel 1 News HD 🇧🇩
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/channel1bd.stream/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="20714fd4-dc3c-46d6-924f-3038d61f027c" tvg-logo="https://s3.aynaott.com/storage/8e998f20a9cc52cb8eb1f52a5bf38204" group-title="Bangladesh", Channel I
+https://tvsen6.aynaott.com/channeli/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=e482eb65fa4ccd07da0ef44ef3d9e880
+#EXTINF:-1 tvg-id="1a2c8ec3-61d5-4355-80e2-fc3c9b178a0d" tvg-logo="https://s3.aynaott.com/storage/1a619c9b917eb35898020cd323e415a7" group-title="Bangladesh", NTV
+https://tvsen5.aynaott.com/ntvbd/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=7ca63a00ea03d5ab585ce29f08b77f9b
+#EXTINF:-1 tvg-id="21e75798-3b6a-4214-9d93-b3fecaa4e700" tvg-logo="https://s3.aynaott.com/storage/788ab3e49b2aa6af247722762ed6e72a" group-title="Bangladesh", Bangla Vision
+https://tvsen5.aynaott.com/banglavision/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=1ebfe31226d4aa12ca28f255ab0cdcfa
+#EXTINF:-1 tvg-id="70e97db9-5a9e-4642-874e-af3d30ba9925" tvg-logo="https://s3.aynaott.com/storage/094587a26f2c5e4f2962104728ec8c5d" group-title="Bangladesh", RTV
+https://tvsen5.aynaott.com/RtvHD/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=aa47a2b826d36eeb4cab3731eff373e7
+#EXTINF:-1 tvg-id="9046949b-9847-4b5d-96c1-e82b0734444b" tvg-logo="https://s3.aynaott.com/storage/eff41809fca04f7c1da5481e135d7913" group-title="Bangladesh", ATN Bangla
+https://tvsen5.aynaott.com/atnbangla/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=77d8e0ba0b9fbef5e6387b93a1123ed9
+#EXTINF:-1 tvg-id="b3f0df76-15ba-4ede-a7de-bbaaf23a630e" tvg-logo="https://s3.aynaott.com/storage/8a1af81802b0728c064c2adabcdc72c8" group-title="Bangladesh", ETV
+https://tvsen6.aynaott.com/etv/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=0bae7cec18dbd3498db1350fadc0f007
+#EXTINF:-1 tvg-id="9a94b22f-c4a4-4150-8eb9-129d0ddeb934" tvg-logo="https://s3.aynaott.com/storage/1b5cb8c7901739cd7d201a38d2ab4737" group-title="Bangladesh", Maasranga TV
+https://tvsen5.aynaott.com/maasrangatv/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=bfee8549f4bd8997a1c51733314c0ae7
+#EXTINF:-1 tvg-id="0be12af9-e713-4c65-b4ed-b735793a0418" tvg-logo="https://s3.aynaott.com/storage/76717b7a598a30815a1bdb16ecd3af6c" group-title="Bangladesh", Deepto TV
+https://tvsen5.aynaott.com/DeeptoTVHD/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=622d07788b853f243e4750455731e041
+#EXTINF:-1 tvg-id="0579659b-2854-40d1-ad6a-69b70641ad17" tvg-logo="https://s3.aynaott.com/storage/274c30c492e8795c8011d0129113f4bc" group-title="Bangladesh", Ekhon TV
+https://tvsen6.aynaott.com/ekhontv/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=14b05e35ebd133feeb1286b601d6981f
+#EXTINF:-1 tvg-id="d07563b0-7580-4cbd-a7c9-e67535c0164a" tvg-logo="https://s3.aynaott.com/storage/f710d2ff532cb7e7b75566232c5b72d3" group-title="Bangladesh", SA TV
+https://tvsen6.aynaott.com/satv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=90b8c99cfb50f2cd3a395cc532952bab
+#EXTINF:-1 tvg-id="4d629b90-cfc2-4426-9eef-62b879efdb02" tvg-logo="https://s3.aynaott.com/storage/5282cec3a2e9349b750540d658cf1b6c" group-title="Bangladesh", Asian TV
+https://tvsen6.aynaott.com/asiantv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=77c642af31497dcb8e175aa3c9495dda
+#EXTINF:-1 tvg-id="b1808fb2-8892-49dc-965e-d038e5334995" tvg-logo="https://s3.aynaott.com/storage/417a833f6d83021c99bfc3d4176610f4" group-title="Bangladesh", Gazi TV
+https://tvsen5.aynaott.com/Ravc7gPCZpxk/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=b333afbd54382285e7354363100fac3c
+#EXTINF:-1 tvg-id="56f7abf3-1586-4f6d-9df2-1726ccb43779" tvg-logo="https://s3.aynaott.com/storage/a959f06b4fc9e1421f867b6c1601fe43" group-title="Bangladesh", Channel 9
+https://tvsen6.aynaott.com/channel9/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=467593f0e233ded005b37b967e58e367
+#EXTINF:-1 tvg-id="f7f53551-5bcf-4704-9652-18a8b70568ca" tvg-logo="https://s3.aynaott.com/storage/1678abdbf203bb77af4bbf2905a3de59" group-title="Bangladesh", IBTV USA
+https://tvsen7.aynaott.com/ibtvusa/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=75a313226c613903f1ad01fde28456e1
+#EXTINF:-1 tvg-id="9ab9aa29-3d3b-4527-ab47-d9b69f0ea80c" tvg-logo="https://s3.aynaott.com/storage/51f1530c076c027e431bf18a49613f0b" group-title="Bangladesh", Duronto TV
+https://tvsen6.aynaott.com/durontotv-live/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=270bf4c2bfe6c53bd963a3ae7e65eee1
+#EXTINF:-1 tvg-id="32acaaeb-2b3b-4979-98d9-b45deecde3ec" tvg-logo="https://s3.aynaott.com/storage/813fca9bc7df9a4810efe2eb87c57039" group-title="Bangladesh", MADANI TV
+https://tvsen7.aynaott.com/MadaniTV/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=36d0d1554528dcce250960b20be2058c
+#EXTINF:-1 tvg-id="d0828e90-a8b9-4d2b-9bf7-ab996578147a" tvg-logo="https://s3.aynaott.com/storage/e33b23f7dc3d39008d672952c33069d4" group-title="Bangladesh", Peace TV Bangla HD
+https://tvsen7.aynaott.com/PeaceTvBanglaHD/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=793ed5289f8be659b77781db7d664e4b
+#EXTINF:-1 tvg-id="addb7014-1d2e-41d8-982d-7cafbdc48770" tvg-logo="https://s3.aynaott.com/storage/e42ecfa90e3d6b15bdb7fea5ef673864" group-title="Bangladesh", Bangla TV
+https://tvsen6.aynaott.com/banglatv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=2ece1cf8c3a9a4db91c4e9db5a3c9deb
+#EXTINF:-1 tvg-id="dd8c50e9-5dad-4cb9-9df8-5763e95281ad" tvg-logo="https://s3.aynaott.com/storage/d10390e5434e8cb44172257abd714beb" group-title="Bangladesh", Desh TV
+https://tvsen6.aynaott.com/deshtv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=dec5c266aebf8287f895f3c9a4682c5d
+#EXTINF:-1 tvg-id="92890d5c-473a-454c-ad10-2c6c0c91062a" tvg-logo="https://s3.aynaott.com/storage/58658d4594ca1ff3c5031c9d8e3d9fc0" group-title="Bangladesh", Boishakhi TV
+https://tvsen6.aynaott.com/boishakhitv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=ce52fc5744a41d23b1b37bdb89b4b9a4
+#EXTINF:-1 tvg-id="6662e038-604e-4cdc-87f7-8ec1cdf77a5e" tvg-logo="https://s3.aynaott.com/storage/73082846fdc15d9f0e7268b104c55d92" group-title="Bangladesh", Mohona TV
+https://tvsen6.aynaott.com/mohonatv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=f41e0717912c280147a4c7fdcc7d3ea8
+#EXTINF:-1 tvg-id="e64e1c11-1167-43a1-9e0f-995cbf6f7ff9" tvg-logo="https://s3.aynaott.com/storage/90635c3edf6e3c8dd92210b7248f1fa0" group-title="Bangladesh", NEXUS TV
+https://tvsen6.aynaott.com/nexustv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=17a5cf45344ce07036145f5a8115ca55
+#EXTINF:-1 tvg-id="f7c89459-37bf-4129-904d-33b0a4c0d590" tvg-logo="https://s3.aynaott.com/storage/f23d6f82c1a16458fe0e4c6f11b8fd87" group-title="Bangladesh", Bijoy TV
+https://tvsen6.aynaott.com/bijoytv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=414d0968bb28a97398f48462836c922d
+#EXTINF:-1 tvg-id="0ac6af3d-acce-4d9d-9ce5-32d4b53f9326" tvg-logo="https://s3.aynaott.com/storage/ffd7ba9b76ad555933f94bcb7ff26b44" group-title="Bangladesh", Global TV
+https://tvsen6.aynaott.com/globaltvhd/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=e61e7c3fced3a363643953df57023027
+#EXTINF:-1 tvg-id="c0480a4a-f066-4a20-9f7d-73bbd852260f" tvg-logo="https://s3.aynaott.com/storage/c5b2c623863fbe4033d59d52ff7371ac" group-title="Bangladesh", My TV
+https://tvsen6.aynaott.com/mytv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=34e768638fd189ccb92ae58c3ab9b4a7
+#EXTINF:-1 tvg-id="a108c4e9-ccfa-42f2-8f8f-169ded28cca2" tvg-logo="https://s3.aynaott.com/storage/897698f593fc07974fc46881a440733d" group-title="Bangladesh", Ananda TV
+https://tvsen6.aynaott.com/anandatv/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=b652ca537d61ffb6d4780ccd2de3c656
+#EXTINF:-1 tvg-id="a0e6e9b6-b20b-4f54-82d6-881bef762cfd" tvg-logo="https://s3.aynaott.com/storage/9b6f35f73a099b7a5885a970523c5f78" group-title="Bangladesh", BTV NATIONAL HD
+https://tvsen6.aynaott.com/btvhd/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=bb5352dc1048fb789edc89521e865312
+#EXTINF:-1 tvg-id="888a4c91-241e-47de-b9e5-11495d6cc596" tvg-logo="https://s3.aynaott.com/storage/b30147b97d86754e4b97fc2989628391" group-title="Bangladesh", BTV World
+https://tvsen6.aynaott.com/btv_world/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=5cb47dea4d0e695cd3ae9ffc8cf9d075
+#EXTINF:-1 tvg-id="7c5fee98-96e2-43df-95f4-ae8ded8e9efe" tvg-logo="https://s3.aynaott.com/storage/00da8a07fb26b2fb79359ee535e4c7bc" group-title="Bangladesh", BTV CTG
+https://tvsen6.aynaott.com/btvctg/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=f7f5bb325241c0ae6f6df7b13a0f9e47
+#EXTINF:-1 tvg-id="c7b00628-bc52-4609-be0a-ad02a16e4c04" tvg-logo="https://s3.aynaott.com/storage/08773290bf83a917aebc07810f12ed49" group-title="Bangladesh", Drama 24
+https://vods2.aynascope.net/gseriesDrama/index.m3u8
+#EXTINF:-1 tvg-id="4ad49dd5-0c57-4f51-b397-ffae807f008b" tvg-logo="https://s3.aynaott.com/storage/342b1a51814ed9946fe36ac4999d82a2" group-title="Bangladesh", Channel S
+https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/chsukoff.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="ae87cbb4-8054-41e5-99ee-df09d9e0ac5e" tvg-logo="https://s3.aynaott.com/storage/499219599639007120dc540bdc6e7d9d" group-title="Bangladesh", Green TV HD
+https://tvsen6.aynaott.com/GreenTvHD/index.m3u8?e=1779178087&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=76080fd0c09ae254f36d7848e5e034bd
+#EXTINF:-1 tvg-id="dba3bf51-175c-4815-9754-5e727e5d6250" tvg-logo="https://s3.aynaott.com/storage/6d1aaa03b84a69992940873fc11af8fc" group-title="Bangladesh", Thikana
+https://5dd3981940faa.streamlock.net:443/thikanatv/thikanatv/playlist.m3u8
 #EXTINF:-1 group-title="Bangladesh",Somoy TV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/index.m3u8
 #EXTINF:-1 group-title="Bangladesh",Jamuna TV
