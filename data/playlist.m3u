@@ -55,6 +55,94 @@ https://d39chvnxm26pgp.cloudfront.net/v1/master/72588bff830dec7b26d7cbbf5f3c2492
 http://103.175.73.12:8080/live/417/417_0.m3u8
 #EXTINF:-1 group-title="News Channels",DD News
 http://103.180.212.191:3500/live/538.m3u8
+#EXTINF:-1 tvg-id="8a1ff003-7cd5-4d75-8245-fa8aa3cdc6aa" tvg-logo="https://s3.aynaott.com/storage/aac6488b68844e5756ab46eb79659de8" group-title="News Channels", Jamuna TV
+https://tvsen6.aynaott.com/jamunatv/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=6be702ae45666da58a2c374379628dda
+#EXTINF:-1 tvg-id="c6cbbb28-702d-4788-a59d-569decd67367" tvg-logo="https://s3.aynaott.com/storage/35ae3e7750a053925a0a1732e219dc7a" group-title="News Channels", BTV News
+https://tvsen6.aynaott.com/BTVNews/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=69794b33cacbf5d96f2fe932f5879ce3
+#EXTINF:-1 tvg-id="27ec4394-7640-4dab-abf8-6a48893dfdfe" tvg-logo="https://s3.aynaott.com/storage/ece71c1163a377fbe2d93f9d28c34f60" group-title="News Channels", Somoy News TV
+https://tvsen6.aynaott.com/somoytv/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=1d4e7c85a1be459e27e7fd3be1fb6287
+#EXTINF:-1 tvg-id="1a7a1365-ae2c-470f-9fb2-25c6e83bb108" tvg-logo="https://s3.aynaott.com/storage/d91767995b2f2a54852c92bbbc20daa7" group-title="News Channels", Ekattor TV
+https://tvsen6.aynaott.com/ekattorbdtv/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d70b957e7552b49985982db420dd615d
+#EXTINF:-1 tvg-id="4d584583-f231-4b37-b634-0f92046da57b" tvg-logo="https://s3.aynaott.com/storage/b3564688d9964a0da7cee6174fda39ef" group-title="News Channels", Star News
+https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/1701.m3u8
+#EXTINF:-1 tvg-id="2b1a4340-2557-4d57-b77c-657bb30ce0c8" tvg-logo="https://s3.aynaott.com/storage/7c002f22c02096b0d1ba833ae9ea6d5b" group-title="News Channels", News 24 BD
+https://tvsen6.aynaott.com/news24/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=11b75a1d8d999367ee3e32f40dba4e5d
+#EXTINF:-1 tvg-id="89247cb9-3c3e-465c-bbc7-d444b0d65424" tvg-logo="https://s3.aynaott.com/storage/129b0d0a02566999a0c164cd7d506e55" group-title="News Channels", Channel 24
+https://tvsen6.aynaott.com/channel24/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d256a095933db06e92bc78e8779644ba
+#EXTINF:-1 tvg-id="0875f2c8-2043-499b-9472-2872412a6340" tvg-logo="https://s3.aynaott.com/storage/2c5a73ac3f9772a9cb2d18df1b152545" group-title="News Channels", DBC News
+https://tvsen6.aynaott.com/dbcnews/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=4a728861ab193bd667d5a80d9c6e030d
+#EXTINF:-1 tvg-id="22f28ae5-8c15-4904-b9f6-70bbd94cbc43" tvg-logo="https://s3.aynaott.com/storage/6653326503fcade746d87881d5c99697" group-title="News Channels", Independent TV
+https://tvsen6.aynaott.com/independenttv/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=cb9fe82a7426c08eb3e2f09342bd1d62
+#EXTINF:-1 tvg-id="0268cee6-b897-415e-97bc-116c0f799fc2" tvg-logo="https://s3.aynaott.com/storage/7a20437e5660324c20cf8251ccb7a697" group-title="News Channels", BBC News
+https://tvsen6.aynaott.com/bbcnews/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=c04206f635feff6a0888a40c08d13f10
+#EXTINF:-1 tvg-id="2be13775-7176-4b90-98d7-04c90ffe3b5a" tvg-logo="https://s3.aynaott.com/storage/e0b6da4715f468eb39591911a0597546" group-title="News Channels", CNN
+https://tvsen6.aynaott.com/cnn/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=6f6625eaf6028d9c83262f829abcbbf4
+#EXTINF:-1 tvg-id="4f059328-a08e-41c0-aa0e-fb11eb69da7e" tvg-logo="https://s3.aynaott.com/storage/0ce159bdea29fce7e3e85d12bc8a10c5" group-title="News Channels", DW News
+https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/master.m3u8
+#EXTINF:-1 tvg-id="cb26514c-8cfb-4224-80e5-62a778c1a006" tvg-logo="https://s3.aynaott.com/storage/5d707a103f48d8f9f1634f1b70e2ecdf" group-title="News Channels", AlJazeera
+https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8
+#EXTINF:-1 tvg-id="4ca61a59-e0e2-4566-94fb-055ef46dac9e" tvg-logo="https://s3.aynaott.com/storage/253dcc8b5951160d6aa26bc5ac65ddb8" group-title="News Channels", Bloomberg TV
+https://tvsen6.aynaott.com/bloombergtv/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=0283c4adc9ee7e564163f3665e986d4a
+#EXTINF:-1 tvg-id="eff32f41-b72d-456c-89e1-cf86a097202a" tvg-logo="https://s3.aynaott.com/storage/16a213d06e7362d97cb6085e70c9b5a2" group-title="News Channels", CNBC TV
+https://tvsen6.aynaott.com/cnbc/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=398b48f6467e817fca7563ceae4e4fea
+#EXTINF:-1 tvg-id="398702be-6ac4-4878-90bb-ada4a7d56d21" tvg-logo="https://s3.aynaott.com/storage/9f391e512f41bec54b163b83667da453" group-title="News Channels", CP 24
+https://tvsen6.aynaott.com/cp24/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=57414780196c3c36f9de95b69bf8c792
+#EXTINF:-1 tvg-id="df14a727-6c91-4c8f-ba9f-2ae527ce27dd" tvg-logo="https://s3.aynaott.com/storage/9a9ca715640d3dc227a0a74750ab17f2" group-title="News Channels", MSNBC News
+https://tvsen6.aynaott.com/msnbc/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=edcff2cd8ad9c97435c399f923357ab7
+#EXTINF:-1 tvg-id="50e2fe7f-fa1d-40ee-b37d-c19a992ed97c" tvg-logo="https://s3.aynaott.com/storage/065af1ce1aa68d9d96c27050a8125413" group-title="News Channels", ABC News
+https://tvsen6.aynaott.com/AbcNews/index.m3u8?e=1779178082&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=7c8670d823d9932b7916be2a845c6395
+#EXTINF:-1 tvg-id="63b750d3-73e9-4e8a-b04b-6c79bbcd4f13" tvg-logo="https://s3.aynaott.com/storage/b28173a251bda1357f9884ca7eef7b89" group-title="News Channels", ABC 7 Bay
+https://content.uplynk.com/channel/ext/4413701bf5a1488db55b767f8ae9d4fa/kgo_24x7_news.m3u8
+#EXTINF:-1 tvg-id="aab9a12d-b5a5-4028-8c92-94ea9d302f4e" tvg-logo="https://s3.aynaott.com/storage/69d8281f965475f3293a3e30de8c0ccb" group-title="News Channels", Sky News
+https://tvsen5.aynaott.com/skynews/index.m3u8?e=1779178083&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=3548e3f4832e0c814fe28ff944bfa181
+#EXTINF:-1 tvg-id="393d86c3-5518-4f70-94f1-af2f388d9181" tvg-logo="https://s3.aynaott.com/storage/90258e6758834a12979d27097bee04a7" group-title="News Channels", LIFE TIME
+https://tvsen7.aynaott.com/lifetime/index.m3u8?e=1779178083&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=7d58a8d0979d48546af3861dba9fb034
+#EXTINF:-1 tvg-id="140905b7-dfdf-4e51-aaf5-6fd132773fbe" tvg-logo="https://s3.aynaott.com/storage/4eaf83274ee309489b535852b1780ad2" group-title="News Channels", BEK TV News
+https://cdn3.wowza.com/5/ZWQ1K2NYTmpFbGsr/BEK-WOWZA-1/smil:BEKPRIMEeast.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="369ffecf-00a9-49a9-864d-a8f45c7ef6db" tvg-logo="https://s3.aynaott.com/storage/d969a37a7e1bbd49449ae092d34f0549" group-title="News Channels", NHK World
+https://tvsen6.aynaott.com/nhkworld/index.m3u8?e=1779178083&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=484a3baaa6f61595f1f497fa3462fb96
+#EXTINF:-1 tvg-id="442d91ee-46f3-4dc7-bbde-05f6775e9e6f" tvg-logo="https://s3.aynaott.com/storage/4f6486854be670f7458ab60d0402ee42" group-title="News Channels", Fox 5
+https://tvsen6.aynaott.com/fox5/index.m3u8?e=1779178083&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=ab2c900c8757f4fbd4b27c33ce8c13c3
+#EXTINF:-1 tvg-id="6be81470-eb86-4df1-9726-a95396a293d0" tvg-logo="https://s3.aynaott.com/storage/20e4602dd584784607e5eff3963cdde6" group-title="News Channels", Fox business
+https://tvsen6.aynaott.com/foxbusiness/index.m3u8?e=1779178083&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=084ecf2529d9777691ce14fa43b95877
+#EXTINF:-1 tvg-id="8b15f84b-674b-420e-843a-47c71d0c15e2" tvg-logo="https://s3.aynaott.com/storage/6dd20ecde19ea3f6b6cf6c040701973e" group-title="News Channels", Fox Weather
+https://247wlive.foxweather.com/stream/index.m3u8
+#EXTINF:-1 tvg-id="3ef6eb8b-32f9-4775-85a6-2ccc4b15d658" tvg-logo="https://s3.aynaott.com/storage/f63d4aad95532175f7f44be439f74111" group-title="News Channels", TRT World
+https://tv-trtworld.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="9b638e91-1eaa-4f60-8d7a-13268a62bd39" tvg-logo="https://s3.aynaott.com/storage/9882913a8d68aa99c0501b64749d6320" group-title="News Channels", ABN
+https://mediaserver.abnvideos.com/streams/abnurdu.m3u8
+#EXTINF:-1 tvg-id="6b66f133-9d9b-44c6-870a-8441c8b99fe1" tvg-logo="https://s3.aynaott.com/storage/671cfb22f8d0362ae01403b6e748f2e2" group-title="News Channels", Wion
+https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8
+#EXTINF:-1 tvg-id="acc7957a-b9c4-482a-8639-154bdd7eada1" tvg-logo="https://s3.aynaott.com/storage/67e08c23033802b4443baf81d1b048bf" group-title="News Channels", WEATHER CHANNEL
+https://tvsen6.aynaott.com/TheWeatherChannel/index.m3u8?e=1779178084&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=fa3d50874349e43151fd1a80906b3f22
+#EXTINF:-1 tvg-id="4e74c2fe-7685-4716-8cfc-ff742280f904" tvg-logo="https://s3.aynaott.com/storage/21992f5e8529a9d2a94b6edf917dbd8f" group-title="News Channels", AccuWeather
+https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00684-accuweather-accuweather-plex/playlist.m3u8
+#EXTINF:-1 tvg-id="84600ec5-52b8-45fc-824a-3e3b4f7c9355" tvg-logo="https://s3.aynaott.com/storage/78b7ab973209ec06346cf8acfd8544cd" group-title="News Channels", Sky News Weather
+https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="213a56e4-886c-44b1-8d72-2f8b9957376b" tvg-logo="https://s3.aynaott.com/storage/b0bdea4df810e2d46f689cbb6c990c91" group-title="News Channels", Weather SPY
+https://jukin-weatherspy-2-in.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="9fe49249-fae7-402d-b5b1-6710691bbcf6" tvg-logo="https://s3.aynaott.com/storage/111bfd01fb43770e925ca9cf16663f56" group-title="News Channels", TIME TV USA
+https://tvsen7.aynaott.com/timetv/index.m3u8?e=1779178084&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=411a7a964dd2f4bd3386b33ec1e0785d
+#EXTINF:-1 tvg-id="409a9d23-2206-4e2a-840c-1702571f3d38" tvg-logo="https://s3.aynaott.com/storage/201491b7327fffb27d78f800dd9f42d2" group-title="News Channels", Iran Press
+https://live.presstv.ir/hls/presstv_5_482/index.m3u8
+#EXTINF:-1 tvg-id="9e68af86-7f32-40ba-8d0f-f12276f8e206" tvg-logo="https://s3.aynaott.com/storage/6f17785db48e7b5fb68b7d441ad3ad10" group-title="News Channels", Awaaz India
+http://awaazindia.livebox.co.in/AwaazIndaTVhls/Live.m3u8
+#EXTINF:-1 tvg-id="8377452f-fbc7-4780-8bd2-6db42ac285c0" tvg-logo="https://s3.aynaott.com/storage/947715e0a22f16ac21805073ce6eb0b6" group-title="News Channels", Republic TV Bharat
+https://tvsen6.aynaott.com/RepublicTVBharat/index.m3u8?e=1779178084&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=ec3101fb709c287e30b1938cb82e8045
+#EXTINF:-1 tvg-id="963a3050-6e3b-4de0-a945-bf075677b685" tvg-logo="https://s3.aynaott.com/storage/d3943796d7fe5962ca5385b656682b1a" group-title="News Channels", Hindi Khabar
+https://tvsen7.aynaott.com/HindiKhabar/index.m3u8?e=1779178084&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=a5456f9bdfced8a24581c51e161ff998
+#EXTINF:-1 tvg-id="bd05c25c-2a31-496c-9534-1ab9c8e62a33" tvg-logo="https://s3.aynaott.com/storage/49b496bca6d7c67d53431e9238f83397" group-title="News Channels", India Today
+https://feeds.intoday.in/hltapps/api/master.m3u8
+#EXTINF:-1 tvg-id="a7a2ca97-da11-42fb-8310-db584907c81e" tvg-logo="https://s3.aynaott.com/storage/c643b3f7d7f79ad3913b5d2037f13a88" group-title="News Channels", News 1 India
+https://tvsen6.aynaott.com/News1India/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=ec75aaf091c108ce4c24fe92c8236837
+#EXTINF:-1 tvg-id="b358a9bf-6c73-4901-bde6-0250b67330bc" tvg-logo="https://s3.aynaott.com/storage/80e4113d034ad20bcbea341dcb4ae27e" group-title="News Channels", Sadhna Prime News
+https://tvsen6.aynaott.com/SadhnaPrimeNews/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=75332738bd731be6c4f1ed6e6a2058f5
+#EXTINF:-1 tvg-id="4d545a29-276d-4843-97d7-533f94056c91" tvg-logo="https://s3.aynaott.com/storage/1001f1d96d63da3ced733a843613b6e0" group-title="News Channels", News Nation
+https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6cd2f649739a45ca9de1daf81cc7d0f2/index.m3u8
+#EXTINF:-1 tvg-id="a0a29f90-f7c2-4cc2-b0b4-667253585b84" tvg-logo="https://s3.aynaott.com/storage/8a3c5215dc0b943dc0a80333c0ab21ce" group-title="News Channels", ATN News
+https://tvsen6.aynaott.com/atnnews/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=60a03aab4e45f43bab756b4d9524632e
+#EXTINF:-1 tvg-id="2b78b6b0-5711-438d-b2ec-33313b1806f4" tvg-logo="https://s3.aynaott.com/storage/4ec06dcab54cbbf5b204f797555e6b31" group-title="News Channels", ANB News
+https://tvsen6.aynaott.com/ANB_News/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=af5e489151e3e0762f42e9e49e335d0d
 #EXTINF:-1 group-title="News Channels",Top News Thailand
 https://live.topnews.co.th/hls/topnews_a_720.m3u8
 
