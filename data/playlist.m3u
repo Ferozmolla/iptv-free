@@ -1719,6 +1719,30 @@ https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxI
 http://202.70.146.135:8000/play/a05z/index.m3u8
 
 # ===== India =====
+#EXTINF:-1 tvg-id="dc4a5da2-9423-4c3a-ac8e-62086ff7b6f1" tvg-logo="https://s3.aynaott.com/storage/d90eb718a6674494d2dac28e1d96bf44" group-title="India", Khushboo
+https://cdn-4.pishow.tv/live/1473/master.m3u8
+#EXTINF:-1 tvg-id="7141c05b-97cd-4dd1-9584-423c7a5ce13d" tvg-logo="https://s3.aynaott.com/storage/18cb20e8e53eb27249c62d3aedf51241" group-title="India", Republic Bangla
+https://tvsen5.aynaott.com/R_Bangla/index.m3u8?e=1779178093&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=0270ce88236f88f8276d3127e1ca9cc5
+#EXTINF:-1 tvg-id="4b351549-878b-4f99-88ed-a50e7a4aa84b" tvg-logo="https://s3.aynaott.com/storage/7b93f6be496c9fd25769b09970180c4c" group-title="India", TV9 Bangla
+https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/playlist.m3u8
+#EXTINF:-1 tvg-id="71b599fa-1284-46c3-a2de-9eaab38d74de" tvg-logo="https://s3.aynaott.com/storage/fea79ac5193dd9fb80aa1996f2adc1e2" group-title="India", Zee 24 Ghanta
+https://tvsen6.aynaott.com/zee24/index.m3u8?e=1779178093&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=ce2682a6576c864c455186206fafb6c0
+#EXTINF:-1 tvg-id="262789f8-92af-4738-986c-c5deafeef997" tvg-logo="https://s3.aynaott.com/storage/c355110e9cbebd89649a95f0f0fd77da" group-title="India", kolkata TV
+https://tvsen6.aynaott.com/kolkatatv/index.m3u8?e=1779178093&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=2cfc0b475633a55c9e04f006803b161a
+#EXTINF:-1 tvg-id="f7ef6919-d8e1-42da-8f34-ddd3364c27c1" tvg-logo="https://s3.aynaott.com/storage/e7d8cff366343b850d04a655c6fbf2ff" group-title="India", Assam Talks
+https://tvsen7.aynaott.com/AssamTalks/index.m3u8?e=1779178094&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=e226533a039dfa7859e7ce3967743e99
+#EXTINF:-1 tvg-id="8dc64f21-7dc8-4a41-a583-ddec9f112aeb" tvg-logo="https://s3.aynaott.com/storage/9531f970bb7abf30ac2a48f40838c3a1" group-title="India", R Plus
+https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8
+#EXTINF:-1 tvg-id="28d6e51f-2e35-4c83-9f18-3cf2b8ad1b77" tvg-logo="https://s3.aynaott.com/storage/5a7f80e9417b452051a0e75db768e796" group-title="India", R Plus Gold
+https://tvsen6.aynaott.com/RplusGold/index.m3u8?e=1779178094&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=16442a1e80fa4e0ba316aed9a4969ddb
+#EXTINF:-1 tvg-id="c8080032-034e-4f04-b1ee-0847a6e62a41" tvg-logo="https://s3.aynaott.com/storage/b051fa53014fff26dabf744955969810" group-title="India", News Time Bangla
+https://tvsen6.aynaott.com/NewsTime/index.m3u8?e=1779178094&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d3b89c05375606e9c1a67eaed911c6b3
+#EXTINF:-1 tvg-id="791d2a93-1736-4114-852e-2331fa441799" tvg-logo="https://s3.aynaott.com/storage/296b530024a470f52313692636810e04" group-title="India", Rongeen TV
+https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8
+#EXTINF:-1 tvg-id="8df44874-5511-4c78-a854-8ab6dd6861e5" tvg-logo="https://s3.aynaott.com/storage/e5117c508d18adf0a3f2475eb1fd5a9d" group-title="India", DD Bangla
+https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/7ff57cc9046b4c188b51a0d506f36e7f/index_3.m3u8
+#EXTINF:-1 tvg-id="1092effd-ec5f-4842-a9eb-09db84a23415" tvg-logo="https://s3.aynaott.com/storage/2b00567c538d392c8050124f0064c4a1" group-title="India", Enter 10 Bangla
+https://live-bangla.akamaized.net/liveabr/playlist.m3u8
 #EXTINF:-1 group-title="India",CNBC TV18 Prime
 https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8
 #EXTINF:-1 group-title="India",Colors HD
