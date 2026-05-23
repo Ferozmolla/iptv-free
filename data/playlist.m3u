@@ -4050,9 +4050,9 @@ https://jk3lz82elw79-hls-live.5centscdn.com/newgeonews/07811dc6c422334ce36a09ff5
 https://jk3lz82elw79-hls-live.5centscdn.com/harPalGeo/955ad3298db330b5ee880c2c9e6f23a0.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="KTNNews.pk@SD" tvg-logo="https://i.imgur.com/RtEzpPQ.png" group-title="Pakistan",KTN News (360p)
 https://vodzong.mjunoon.tv:8087/streamtest/KTNNews-151/playlist.m3u8
-#EXTINF:-1 tvg-id="a3d48c46-7902-45e2-abf9-0fab60c4d117" tvg-logo="https://s3.aynaott.com/storage/64de30d2df9b2a888cb73f17614a9a8b" group-title="Sports", A sports
+#EXTINF:-1 tvg-id="a3d48c46-7902-45e2-abf9-0fab60c4d117" tvg-logo="https://s3.aynaott.com/storage/64de30d2df9b2a888cb73f17614a9a8b" group-title="Pakistan", A sports
 https://tvsen6.aynaott.com/asports/index.m3u8?e=1779178079&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=14dc3f04ef5f0057c16df8ae84e40649
-#EXTINF:-1 tvg-id="eacf6c3f-0773-4bc3-a03a-cfee09f10348" tvg-logo="https://s3.aynaott.com/storage/9d9d7cbfba5a8ceea648bbd963ad1014" group-title="Sports", PTV Sports
+#EXTINF:-1 tvg-id="eacf6c3f-0773-4bc3-a03a-cfee09f10348" tvg-logo="https://s3.aynaott.com/storage/9d9d7cbfba5a8ceea648bbd963ad1014" group-title="Pakistan", PTV Sports
 https://tvsen5.aynaott.com/PtvSports/index.m3u8?e=1779178079&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d02d88622dfe7b0b13c57ee1f8478d01
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/9d9d7cbfba5a8ceea648bbd963ad1014",PTV Sports (Server 1)
 https://xstream.emonsa798.workers.dev/?url=http://premimum.online:80/live/jen12345/jen54321/89.ts
@@ -4062,9 +4062,9 @@ https://tvsen5.aynaott.com/PtvSports/index.m3u8?e=1779306055&u=78be6644-0a65-48e
 https://tvsen6.aynaott.com/asports/index.m3u8?e=1779306056&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=435d0e68071932e320c5cd45a9065dbe
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/64de30d2df9b2a888cb73f17614a9a8b",A sports (Server 3)
 https://crichdproxy.saemon068.workers.dev/play?id=a-sports-hd
-#EXTINF:-1 tvg-logo="https://i.imgur.com/1qpPG9F.png",HUM TV (Server 1)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/1qpPG9F.png" group-title="Pakistan",HUM TV (Server 1)
 https://ml-pull-dvc-myco.io:2096/HUM_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0e/ARY_Digital.png",ARY Digital HD
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0e/ARY_Digital.png" group-title="Pakistan",ARY Digital HD
 https://ml-pull-dvc-myco.io:2096/ARY_DIGITAL/tracks-v4a1/mono.ts.m3u8
 #EXTINF:-1 tvg-id="8XM.pk@SD" tvg-logo="https://i.imgur.com/KLrfKRn.png" group-title="Pakistan",8XM (576p)
 http://115.42.65.142:9981/stream/channelid/582886861
