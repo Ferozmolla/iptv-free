@@ -1817,6 +1817,18 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/index.m3u8
 https://tvsen5.aynaott.com/RtvHD/index.m3u8?e=1779178085&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=aa47a2b826d36eeb4cab3731eff373e7
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/eff41809fca04f7c1da5481e135d7913" group-title="Bangladesh",ATN Bangla TV
 https://tvsen5.aynaott.com/atnbangla/index.m3u8?e=1779306011&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=379a8906a6c270ebc075d82ab22f3cc9
+#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/ZKFyzan2-xo/maxresdefault_live.jpg" group-title="Bangladesh",ATN Music
+https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/atnmusic.stream/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/8a3c5215dc0b943dc0a80333c0ab21ce" group-title="Bangladesh",ATN News
+https://tvsen6.aynaott.com/atnnews/index.m3u8?e=1779306032&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=041276a57b38e0e7a305599dfee9f85f
+#EXTINF:-1 tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770189845719.png" group-title="Bangladesh",Star News
+https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/Qxn4JFNV/20250529-071147.png" group-title="Bangladesh",Somoy TV
+https://tvsen6.aynaott.com/somoytv/index.m3u8?e=1779306031&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=abd77509f4d88e86368916c49e9ea037
+#EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/7c002f22c02096b0d1ba833ae9ea6d5b" group-title="Bangladesh",News 24 BD
+#EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/2c5a73ac3f9772a9cb2d18df1b152545" group-title="Bangladesh",DBC News
+https://tvsen6.aynaott.com/dbcnews/index.m3u8?e=1779306034&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a98abb021cae9a463cf7d491b65ace92
+https://tvsen6.aynaott.com/news24/index.m3u8?e=1779306035&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=abc098c3fd9addaa87d6cf0da52c3e2f
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/L6R2F0jj/20250529_105209.png" group-title="Bangladesh",Ekushey TV
 https://tvsen6.aynaott.com/etv/index.m3u8?e=1779306012&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=d756c2ec1df13abbe01e24d926882a2a
 #EXTINF:-1 tvg-logo="https://i.imgur.com/s49AcXv.jpeg" group-title="Bangladesh",Maasranga TV
@@ -1850,22 +1862,12 @@ https://tvsen6.aynaott.com/globaltvhd/index.m3u8?e=1779178086&u=617d0e90-2bc6-4d
 https://tvsen6.aynaott.com/bijoytv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=414d0968bb28a97398f48462836c922d
 #EXTINF:-1 tvg-id="e64e1c11-1167-43a1-9e0f-995cbf6f7ff9" tvg-logo="https://s3.aynaott.com/storage/90635c3edf6e3c8dd92210b7248f1fa0" group-title="Bangladesh" group-title="Bangladesh", NEXUS TV
 https://tvsen6.aynaott.com/nexustv/index.m3u8?e=1779178086&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=17a5cf45344ce07036145f5a8115ca55
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/Qxn4JFNV/20250529-071147.png" group-title="Bangladesh",Somoy TV
-https://tvsen6.aynaott.com/somoytv/index.m3u8?e=1779306031&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=abd77509f4d88e86368916c49e9ea037
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/129b0d0a02566999a0c164cd7d506e55" group-title="Bangladesh",Channel 24
 https://tvsen6.aynaott.com/channel24/index.m3u8?e=1779306031&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=ad5ed95d28ff388644d1c6a1b1888a69
-#EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/8a3c5215dc0b943dc0a80333c0ab21ce" group-title="Bangladesh",ATN News
-https://tvsen6.aynaott.com/atnnews/index.m3u8?e=1779306032&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=041276a57b38e0e7a305599dfee9f85f
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/6653326503fcade746d87881d5c99697" group-title="Bangladesh",Independent TV
 https://tvsen6.aynaott.com/independenttv/index.m3u8?e=1779306033&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=985a809a6d8d9a1c9dcab6bbad4cd578
-#EXTINF:-1 tvg-logo="https://i.ytimg.com/vi/ZKFyzan2-xo/maxresdefault_live.jpg" group-title="Bangladesh",ATN Music
-https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/atnmusic.stream/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/2c5a73ac3f9772a9cb2d18df1b152545" group-title="Bangladesh",DBC News
-https://tvsen6.aynaott.com/dbcnews/index.m3u8?e=1779306034&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a98abb021cae9a463cf7d491b65ace92
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/274c30c492e8795c8011d0129113f4bc" group-title="Bangladesh",Ekhon TV
 https://tvsen6.aynaott.com/ekhontv/index.m3u8?e=1779306034&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a8ab76700eaf62dd6990d59bc9d65e96
-#EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/7c002f22c02096b0d1ba833ae9ea6d5b" group-title="Bangladesh",News 24 BD
-https://tvsen6.aynaott.com/news24/index.m3u8?e=1779306035&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=abc098c3fd9addaa87d6cf0da52c3e2f
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/d91767995b2f2a54852c92bbbc20daa7" group-title="Bangladesh",Ekattor TV
 https://tvsen6.aynaott.com/ekattorbdtv/index.m3u8?e=1779306036&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=02c6d93aa2a7f4e3ce1a4d6de181c4b7
 #EXTINF:-1 tvg-logo="https://s3.aynaott.com/storage/aac6488b68844e5756ab46eb79659de8" group-title="Bangladesh",Jamuna TV
@@ -1904,8 +1906,6 @@ https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF9
 https://stream.shariarsuvo.com/hls5/rajdhanicable.m3u8
 #EXTINF:-1 tvg-logo="https://asset.bioscopelive.com/uploads/images/2025/08/11/thumbnails_58ebcef1efcc65837557de15952d2643_goplay_srk_tv_landscape.jpg" group-title="Bangladesh",SRK TV
 https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770189845719.png" group-title="Bangladesh",Star News
-https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.m3u8
 #EXTINF:-1 group-title="Bangladesh",Discovery Bangla
 http://202.70.146.135:8000/play/a05z/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/HzfIL6z.jpeg" group-title="Bangladesh",Gopal Bhar
