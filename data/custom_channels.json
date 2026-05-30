@@ -6,17 +6,17 @@
     "channels": [
       {
         "name": "IPL T20 Live - Link 1",
-        "url": "http://41.205.93.154/STARSPORTS1/index.m3u8",
+        "url": "https://tvsen5.aynaott.com/willowhd/index.m3u8?e=1779178079&u=617d0e90-2bc6-4dc5-8897-f5638f8fd01a&token=d71d71025ad8ed99266bb333137dc3e0",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPkLNzYmE3iWoT0RIUPh5dPx392smbo8bbbTfkUy2nWw&s=10"
       },
       {
         "name": "IPL T20 Live - Link 2",
-        "url": "http://41.205.93.154/STARSPORTS1/index.m3u8",
+        "url": "http://202.70.146.135:8000/play/a01e/index.m3u8",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPkLNzYmE3iWoT0RIUPh5dPx392smbo8bbbTfkUy2nWw&s=10"
       },
       {
         "name": "IPL T20 Live - Link 3",
-        "url": "https://playztv-apps.pages.dev/willow/index.m3u8",
+        "url": "http://y3fqd48g.megatv.fun/iptv/NRLXRWSBWBPLN4/19146/index.m3u8",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPkLNzYmE3iWoT0RIUPh5dPx392smbo8bbbTfkUy2nWw&s=10"
       }
     ]
