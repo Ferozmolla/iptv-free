@@ -1,19 +1,39 @@
 [
   {
-    "groupName": "Football Live",
+    "groupName": "FIFA World Cup 2026™ Live",
     "groupIcon": "fas fa-futbol",
     "category": "Football",
     "channels": [
       {
         "name": "Football Live - Link 1",
-        "url": "https://multiplatform-f.akamaihd.net/i/multi/will/apple/master.m3u8",
-        "logo": "https://via.placeholder.com/300x150/FF6B00/FFFFFF?text=Football+Link+1"
+        "url": "https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8",
+        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
       },
       {
         "name": "Football Live - Link 2",
-        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-        "logo": "https://via.placeholder.com/300x150/FF6B00/FFFFFF?text=Football+Link+2"
-      }
+        "url": "https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8",
+        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
+      },
+      {
+        "name": "Football Live - Link 3",
+        "url": "https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8",
+        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
+      },
+      {
+        "name": "Football Live - Link 4",
+        "url": "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8",
+        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
+      },
+      {
+        "name": "Football Live - Link 5",
+         "url": "https://1nyaler.streamhostingcdn.top/stream/89/index.m3u8",
+        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
+      },
+      {
+        "name": "Football Live - Link 6",
+         "url": "https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8",
+        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
+      },
     ]
   }
 ]
