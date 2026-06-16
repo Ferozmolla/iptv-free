@@ -1633,6 +1633,8 @@ https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/1080p-vtt/index.m3u8
 #EXTINF:-1 tvg-logo="https://stream.codecloud.bd/uploads/logos/logo_6a2a3938aca1c.png" group-title="Football",Caze Tv Server 2
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",IDMANTV 🇹🇷
+https://str2.yodacdn.net/idman_300_to_small/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TYC Sports
 https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
 #EXTINF:-1 ,Football World Cup 2026 (4K)
