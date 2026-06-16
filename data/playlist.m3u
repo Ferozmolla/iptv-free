@@ -1617,7 +1617,8 @@ http://41.205.93.154/STARSPORTS1/index.m3u8
 https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8
 
 # ===== Football =====
-
+#EXTINF:-1 ,Zee Bangla Cinema (FIFA)
+https://sm-monirul.top/toffee/play/zee_bangla_cinema.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Win Sports
 https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports
