@@ -1619,6 +1619,8 @@ http://41.205.93.154/STARSPORTS1/index.m3u8
 # ===== Football =====
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/o5BoWU_BEz.png",FOX SPORTS ENGLISH (FIFA)
 https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist_b4096000_slENG.m3u8
+#EXTINF:-1 1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",🇦🇺 🇹🇷
+https://live05.msdht.app/live/08552895.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",Zee Bangla Cinema ((FIFA BANGLA COMMENTARY))
 https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD.m3u8
 #EXTINF:-1 group-title="Football"tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",DSPORTS HD
@@ -1643,7 +1645,7 @@ https://1nyaler.streamhostingcdn.top/stream/117/index.m3u8
 https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8
 #EXTINF:-1 group-title="Football",Football World Cup 2026 (4K)
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/6408/index.m3u8
-#EXTINF:-1 ,GO Live
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",GO Live
 https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8
 #EXTINF:-1 group-title="Football",GO 3 sport 1 hd
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18000/index.m3u8
