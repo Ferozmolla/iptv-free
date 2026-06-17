@@ -62,3 +62,4 @@ app-enhanced.js
 *.json
 *.html
 *.html
+data/custom_channels.json
