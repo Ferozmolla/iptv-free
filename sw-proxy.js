@@ -11,8 +11,14 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
     
-    // শুধুমাত্র .m3u8 বা .ts ফাইলের জন্য এবং যদি সেগুলো HTTP হয়
-    if (url.protocol === 'http:' && (url.pathname.endsWith('.m3u8') || url.pathname.endsWith('.ts') || url.href.includes('m3u8'))) {
+    // .m3u8, .ts, এবং .mpd (DASH) ফাইলের জন্য প্রক্সি সাপোর্ট
+    const isStreamFile = url.pathname.endsWith('.m3u8') || 
+                         url.pathname.endsWith('.ts') || 
+                         url.pathname.endsWith('.mpd') || 
+                         url.href.includes('m3u8') || 
+                         url.href.includes('.mpd');
+
+    if (url.protocol === 'http:' && isStreamFile) {
         console.log('SW Proxy Intercepting:', url.href);
         
         const proxiedUrl = PROXY_URL + encodeURIComponent(url.href);
@@ -23,7 +29,7 @@ self.addEventListener('fetch', (event) => {
                 credentials: 'omit'
             }).catch(err => {
                 console.error('SW Proxy Fetch Error:', err);
-                return fetch(event.request); // ফেইল করলে অরিজিনাল রিকোয়েস্ট চেষ্টা করবে
+                return fetch(event.request); 
             })
         );
     }
