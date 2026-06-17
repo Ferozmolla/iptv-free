@@ -1619,6 +1619,8 @@ http://41.205.93.154/STARSPORTS1/index.m3u8
 # ===== Football =====
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",GO Live
 https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",Unite8 Sports 2 HD
+http://212.102.34.8:9080/AndFlixHD/video.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/o5BoWU_BEz.png",FOX SPORTS ENGLISH (FIFA)
 https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist_b4096000_slENG.m3u8
 #EXTINF:-1 1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",🇦🇺 🇹🇷
