@@ -1619,12 +1619,26 @@ http://41.205.93.154/STARSPORTS1/index.m3u8
 # ===== Football =====
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",GO Live
 https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",PTV Sports pk HD
+https://crichd.johirxofficial.workers.dev/live/ptvpk.m3u8
 #EXTINF:-1 tvg-id="Somoy" tvg-name="Somoy" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",Somoy TV
 https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
-#EXTINF:-1 tvg-id="Z Bangla sonar" tvg-name="Z Bangla sonar" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",Zee Bangla HD 
-https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/Zeebanglahd.m3u8
-#EXTINF:-1 tvg-id="Bein_Sports_1" tvg-name="Bein Sports 1" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",Bein Sports 1
+#EXTINF:-1 tvg-id="Bein_Sports_1 720p" tvg-name="Bein Sports 1 720p" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",Bein Sports 1 720p
 https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
+#EXTINF:-1 1 tvg-id="Bein_Sports_1 720p" tvg-name="Bein Sports 1 720p" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",BEIN SPORTS 1 Turkey
+https://andro.226503.xyz/checklist/androstreamlivebiraz1.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",AU TR
+https://andro.226503.xyz/checklist/androstreamlivebs1.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",NEXT TV
+https://next.badinan.xyz/nexttv/FHD/playlist.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",FUSSBALL TV2
+https://test.movielinkbd.com/storage/relay/test/index.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TYC Sports
+https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Tv Azteca
+https://1nyaler.streamhostingcdn.top/stream/117/index.m3u8
+#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Tudn Sports
+https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8
 #EXTINF:-1 tvg-id="WIN_Sports" tvg-name="WIN Sports" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",WIN Sports
 https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
 #EXTINF:-1 tvg-id="FOX" tvg-name="FOX" tvg-logo="https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png" group-title="Football",FOX
@@ -1663,8 +1677,6 @@ https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/1080p-vtt/index.
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg",IDMANTV 🇹🇷
 https://str2.yodacdn.net/idman_300_to_small/tracks-v1a1/mono.m3u8
-#EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TYC Sports
-https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Tv Azteca
 https://1nyaler.streamhostingcdn.top/stream/117/index.m3u8
 #EXTINF:-1 group-title="Football" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Tudn Sports
@@ -1675,6 +1687,7 @@ http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/6408/index.m3u8
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18000/index.m3u8
 #EXTINF:-1 group-title="Football",GO 3 sport 2 hd
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18001/index.m3u8
+
 # ===== Bangladesh =====
 #EXTINF:-1 ,Zee Bangla Cinema (FIFA)
 https://sm-monirul.top/toffee/play/zee_bangla_cinema.m3u8
