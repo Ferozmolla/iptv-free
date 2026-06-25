@@ -1,25 +1,139 @@
 [
-  {
-    "groupName": "FIFA World Cup 2026™ Live",
-    "groupIcon": "fas fa-futbol",
-    "category": "Football",
-    "channels": [
       {
-        "name": "Football Live - Link 1",
-        "url": "https://andro.226503.xyz/checklist/androstreamlivebs1.m3u8",
-        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
-      },
-      {
-        "name": "Football Live - Link 2",
-        "url": "https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8",
-        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
-      },
-      {
-        "name": "Football Live - Link 3",
-        "url": "https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8",
-        "logo": "https://imglink.cc/cdn/RY7jBwPKAr.jpg"
-      }
-       
-    ]
-  }
+        "groupName": "FIFA World Cup 2026™ Live",
+        "groupIcon": "fas fa-futbol",
+        "category": "Football",
+        "channels": [
+            {
+                "name": "Somoy TV HD",
+                "url": "http://ubuntu.moonplex.net:8080/Somoy_TV/index.m3u8",
+                "logo": "https://i.ibb.co.com/hFXKPxCv/Somoy-TV.png"
+            },
+            {
+                "name": "T SPORTS (HD)",
+                "url": "https://trs1.aynaott.com/tsports/index.m3u8",
+                "logo": "https://s3.aynaott.com/storage/dbc585f70a60b9855b6e13a8ce4cb6f4"
+            },
+            {
+                "name": "BTV",
+                "url": "https://tv.beyondtaxconsultants.com/api/robi/lps/http://198.195.239.50:8095/btv/tracks-v1a1/mono.m3u8",
+                "logo": "https://www.btvlive.gov.bd/_next/image?url=https%3A%2F%2Fd38ll44lbmt52p.cloudfront.net%2Fcms%2Fchannel_poster%2F1677040358634_BTVogo.png&w=1920&q=75"
+            },
+            {
+                "name": "TOFFEE BD",
+                "url": "http://sm-monirul.top/tof/live/gervsivo/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "Munsun Sports",
+                "url": "https://andro.226503.xyz/checklist/androstreamlivebs1.m3u8",
+                "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/330px-2026_FIFA_World_Cup_emblem.svg.png"
+            },
+            {
+                "name": "PTV Sports",
+                "url": "http://stalker.hakunamata.workers.dev/play/1099/index.m3u8",
+                "logo": "https://s3.aynaott.com/storage/9d9d7cbfba5a8ceea648bbd963ad1014"
+            },
+            {
+                "name": "ZIGGO SPORT",
+                "url": "http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/2560/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "DAZN",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8",
+                "logo": "https://i.ibb.co.com/XrZyw5T7/DAZN.png"
+            },
+            {
+                "name": "WIN Sports",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8",
+                "logo": "https://i.ibb.co.com/bjVNMbr6/20260613-100921.png"
+            },
+            {
+                "name": "ESPN HD",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/97/index.m3u8",
+                "logo": "https://i.ibb.co.com/pvGTyShd/ESPN-HD.png"
+            },
+            {
+                "name": "CCTV 5",
+                "url": "https://play1.gzxdby.com/live/783234345958_4547667094.m3u8",
+                "logo": "https://i.ibb.co.com/bjwQqq9H/CCTV-5.png"
+            },
+            {
+                "name": "TSN Sports",
+                "url": "http://stalker.hakunamata.workers.dev/play/260/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "Unite 8 Sports HD",
+                "url": "http://212.102.34.8:9080/AndFlixHD/video.m3u8",
+                "logo": "https://i.ibb.co.com/qMJrK32R/Unite8-Sports.png"
+            },
+            {
+                "name": "TVP Sports",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/89/index.m3u8",
+                "logo": "https://i.ibb.co.com/XrPWPckC/TVP-Sports.png"
+            },
+            {
+                "name": "Bein Sports 1",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8",
+                "logo": "https://i.ibb.co.com/S7tZS6cg/Bein-Sports-1-Direct.png"
+            },
+            {
+                "name": "ALKAS Sports",
+                "url": "https://liveeu-gcp.alkassdigital.net/alkass1-p/main.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "M6",
+                "url": "https://tv.beyondtaxconsultants.com/api/robi/lps/http://151.80.18.177:86/M6_HD/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "WIN Sports",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "FOX",
+                "url": "http://84.17.50.102/fox/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "NEXT TV",
+                "url": "https://next.badinan.xyz/nexttv/FHD/playlist.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "Caze Tv Brasil",
+                "url": "https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/1080p-vtt/index.m3u8",
+                "logo": "https://stream.codecloud.bd/uploads/logos/logo_6a2a39c4ac184.png"
+            },                       
+            {
+                "name": "DAZN 1",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "Telemundo",
+                "url": "https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "ESPN S1",
+                "url": "https://next.badinan.xyz/nexttv/FHD/playlist.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "D Sports",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },
+            {
+                "name": "Tudn Sports",
+                "url": "https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            }
+        ]
+    }
 ]
