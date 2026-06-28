@@ -1,4 +1,4 @@
-// IPTV PRO V51 - Ultra Pro Player with YouTube & M3U8 Support
+// IPTV PRO V51 - Ultra Pro Player with YouTube, M3U8, TS & MPD Support
 // Optimized for Smart TV, Mobile & PC with Advanced Proxy & Buffering
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("Pro Player V51: Loading stream:", streamUrl.substring(0, 50) + "...");
 
-    // Enhanced Proxy List for CORS & Mixed Content - Optimized for GitHub/Netlify
+    // Enhanced Proxy List for CORS & Mixed Content
     const proxies = [
         "", // Direct (no proxy)
         "https://api.allorigins.win/raw?url=",
@@ -39,31 +39,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentProxyIndex = 0;
     let engineIndex = 0;
     let failureCount = 0;
-    const engines = ['hls', 'native', 'clappr', 'dash', 'fallback'];
+    const engines = ['hls', 'dash', 'native', 'clappr', 'fallback'];
     const maxFailures = proxies.length * engines.length;
 
-    // Pro-level configuration optimized for slow networks
+    // Pro-level configuration
     const proConfig = {
         hlsConfig: {
             enableWorker: true,
             lowLatencyMode: !isSlowNetwork,
-            backBufferLength: isSlowNetwork ? 60 : 60,
+            backBufferLength: 90,
             maxBufferLength: isSlowNetwork ? 180 : 120,
             maxMaxBufferLength: isSlowNetwork ? 300 : 240,
-            manifestLoadingTimeOut: isSlowNetwork ? 30000 : 10000,
-            manifestLoadingMaxRetry: isSlowNetwork ? 5 : 3,
-            levelLoadingTimeOut: isSlowNetwork ? 30000 : 10000,
-            levelLoadingMaxRetry: isSlowNetwork ? 5 : 3,
-            fragLoadingTimeOut: isSlowNetwork ? 45000 : 15000,
-            fragLoadingMaxRetry: isSlowNetwork ? 5 : 3,
-            abrEwmaFastLive: isSlowNetwork ? 3000 : 3000,
-            abrEwmaSlowLive: isSlowNetwork ? 9000 : 9000,
+            manifestLoadingTimeOut: 20000,
+            manifestLoadingMaxRetry: 5,
+            levelLoadingTimeOut: 20000,
+            levelLoadingMaxRetry: 5,
+            fragLoadingTimeOut: 30000,
+            fragLoadingMaxRetry: 6,
             startLevel: isSlowNetwork ? 0 : -1,
-            abrBandwidthFactor: isSlowNetwork ? 0.95 : 0.95,
-            abrBandwidthSafetyFactor: isSlowNetwork ? 0.9 : 0.9,
             xhrSetup: function(xhr, url) {
                 xhr.withCredentials = false;
-                xhr.timeout = isSlowNetwork ? 45000 : 15000;
+            }
+        },
+        shakaConfig: {
+            streaming: {
+                bufferingGoal: isSlowNetwork ? 60 : 30,
+                rebufferingGoal: isSlowNetwork ? 15 : 10,
+                bufferBehind: 30
             }
         }
     };
@@ -84,13 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function playYouTubeVideo(videoId) {
-        console.log("Engine: YouTube Embed");
         playerWrapper.innerHTML = `
             <iframe 
                 id="youtube-player"
                 width="100%" 
                 height="100%" 
-                src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&fs=1&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}" 
+                src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0&fs=1" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen
@@ -116,15 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let finalUrl = url;
         
-        // Mixed Content Check: If page is HTTPS and stream is HTTP, we MUST use a proxy
         if (isPageHttps && isStreamHttp && currentProxyIndex === 0) {
-            console.warn("Mixed content detected (HTTPS page, HTTP stream). Forcing proxy for compatibility...");
-            // If it's a .ts file, try a specific proxy first that handles binary well
-            if (url.includes('.ts')) {
-                currentProxyIndex = 2; // corsproxy.io often works better for binary
-            } else {
-                currentProxyIndex = 1; // Default to allorigins
-            }
+            currentProxyIndex = 1; // Force proxy for mixed content
         }
         
         if (currentProxyIndex > 0) {
@@ -132,23 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const currentEngine = engines[engineIndex];
-        console.log(`Attempt ${failureCount + 1}/${maxFailures}: Engine=${currentEngine}, Proxy=${currentProxyIndex}, URL=${url.substring(0, 40)}...`);
+        const isM3U8 = url.toLowerCase().includes('.m3u8');
+        const isTS = url.toLowerCase().includes('.ts');
+        const isMPD = url.toLowerCase().includes('.mpd');
 
-        // .ts files are usually MPEG-TS and can be played via HLS.js or as a direct stream
-        const isM3U8 = url.includes('.m3u8');
-        const isTS = url.includes('.ts');
-        const isHlsSource = currentEngine === 'hls' || isM3U8 || isTS;
+        console.log(`Engine: ${currentEngine}, Proxy: ${currentProxyIndex}, Format: ${isM3U8 ? 'HLS' : isTS ? 'TS' : isMPD ? 'DASH' : 'Other'}`);
 
-        if (isHlsSource) {
-            if (currentEngine === 'clappr') {
-                tryClappr(finalUrl);
-            } else if (typeof Hls !== 'undefined' && Hls.isSupported() && currentEngine === 'hls') {
+        if (isMPD || currentEngine === 'dash') {
+            tryShaka(finalUrl);
+        } else if (isM3U8 || isTS || currentEngine === 'hls') {
+            if (typeof Hls !== 'undefined' && Hls.isSupported()) {
                 tryHlsJs(finalUrl, isTS);
             } else {
-                tryNativeVideo(finalUrl);
+                tryNativeVideo(finalUrl, isTS);
             }
-        } else if (currentEngine === 'dash' || url.includes('.mpd')) {
-            tryShaka(finalUrl);
         } else {
             tryNativeVideo(finalUrl);
         }
@@ -158,103 +149,46 @@ document.addEventListener('DOMContentLoaded', () => {
         playerWrapper.innerHTML = '<video id="video-player" class="pro-video" controls autoplay playsinline crossorigin="anonymous"></video>';
         const video = document.getElementById('video-player');
         
-        // If it's a direct .ts file, we might need to wrap it or use a different approach
-        // However, HLS.js is primarily for manifests. For direct .ts, native might sometimes work better
-        // but HLS.js can also handle fragmented MP4/TS if configured.
-        
         const hls = new Hls(proConfig.hlsConfig);
-        
         hls.loadSource(url);
         hls.attachMedia(video);
 
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
-            console.log("HLS Manifest parsed successfully");
-            video.play().catch(() => console.log("Autoplay blocked"));
+            video.play().catch(() => {});
             hideLoading();
         });
 
         hls.on(Hls.Events.ERROR, (event, data) => {
-            console.error("HLS Error:", data.type, data.details, data);
-            
-            // If HLS fails on a .ts file, immediately try native video as fallback
             if (data.fatal) {
                 hls.destroy();
-                if (isTS) {
-                    console.log("HLS failed for .ts, trying native...");
-                    tryNativeVideo(url);
-                } else {
-                    handleFailure();
-                }
+                handleFailure();
             }
         });
     }
 
-    function tryNativeVideo(url) {
-        // For .ts files, some browsers need video/mp2t type
-        const isTS = url.includes('.ts');
-        const typeStr = isTS ? 'type="video/mp2t"' : 'type="application/x-mpegURL"';
-        
-        playerWrapper.innerHTML = `<video id="video-player" class="pro-video" controls autoplay playsinline crossorigin="anonymous"><source src="${url}" ${typeStr}><source src="${url}" type="video/mp4"></video>`;
+    function tryNativeVideo(url, isTS = false) {
+        const typeStr = isTS ? 'type="video/mp2t"' : (url.includes('.m3u8') ? 'type="application/x-mpegURL"' : 'type="video/mp4"');
+        playerWrapper.innerHTML = `<video id="video-player" class="pro-video" controls autoplay playsinline crossorigin="anonymous"><source src="${url}" ${typeStr}></video>`;
         const video = document.getElementById('video-player');
 
-        let playAttempted = false;
-        
         video.oncanplay = () => {
-            console.log("Native video can play");
-            if (!playAttempted) {
-                playAttempted = true;
-                video.play().catch(() => {});
-                hideLoading();
-            }
+            video.play().catch(() => {});
+            hideLoading();
         };
 
-        video.onerror = () => {
-            console.error("Native Video Error");
-            handleFailure();
-        };
-    }
-
-    function tryClappr(url) {
-        if (typeof Clappr !== 'undefined') {
-            playerWrapper.innerHTML = '<div id="clappr-player" style="width:100%; height:100%;"></div>';
-            const player = new Clappr.Player({
-                source: url,
-                parentId: "#clappr-player",
-                width: '100%',
-                height: '100%',
-                autoPlay: true,
-                playback: {
-                    hlsjsConfig: proConfig.hlsConfig
-                },
-                events: {
-                    onReady: () => {
-                        console.log("Clappr Ready");
-                        hideLoading();
-                    },
-                    onError: (e) => {
-                        console.error("Clappr Error", e);
-                        handleFailure();
-                    }
-                }
-            });
-        } else {
-            handleFailure();
-        }
+        video.onerror = () => handleFailure();
     }
 
     function tryShaka(url) {
-        playerWrapper.innerHTML = '<video id="video-player" class="pro-video" controls autoplay playsinline></video>';
+        playerWrapper.innerHTML = '<video id="video-player" class="pro-video" controls autoplay playsinline crossorigin="anonymous"></video>';
         const video = document.getElementById('video-player');
         
         if (typeof shaka !== 'undefined') {
             const player = new shaka.Player(video);
+            player.configure(proConfig.shakaConfig);
             player.load(url).then(() => {
-                console.log("Shaka player loaded successfully");
                 hideLoading();
-            }).catch((e) => {
-                console.error("Shaka Error", e);
-                handleFailure();
-            });
+            }).catch(() => handleFailure());
         } else {
             handleFailure();
         }
@@ -262,29 +196,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleFailure() {
         failureCount++;
-        console.log(`Failure #${failureCount}/${maxFailures} at Engine: ${engines[engineIndex]}, Proxy: ${currentProxyIndex}`);
-        
         if (failureCount >= maxFailures) {
-            console.error("All playback engines and proxies failed for URL:", streamUrl);
-            showError("Stream unavailable. This might be due to a broken link or strict security on GitHub/Netlify. Try another channel.");
+            showError("All playback methods failed. Please check the link.");
             return;
         }
         
-        // Faster Strategy for GitHub/Netlify: Try next proxy immediately
         if (currentProxyIndex < proxies.length - 1) {
             currentProxyIndex++;
-            console.log(`Switching to proxy ${currentProxyIndex}...`);
-            setTimeout(() => tryNextEngine(streamUrl), 200); // Faster retry
-        } 
-        else if (engineIndex < engines.length - 1) {
-            engineIndex++;
+        } else {
             currentProxyIndex = 0;
-            console.log(`Switching to engine ${engineIndex}...`);
-            setTimeout(() => tryNextEngine(streamUrl), 200); // Faster retry
-        } 
-        else {
-            showError("All playback methods exhausted. Stream is not accessible.");
+            engineIndex++;
         }
+        setTimeout(() => tryNextEngine(streamUrl), 100);
     }
 
     function hideLoading() {
