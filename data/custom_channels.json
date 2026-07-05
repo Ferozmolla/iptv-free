@@ -6,7 +6,7 @@
         "channels": [
             {
                 "name": "Somoy TV HD",
-                "url": "http://ubuntu.moonplex.net:8080/Somoy_TV/index.m3u8",
+                "url": "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
                 "logo": "https://i.ibb.co.com/hFXKPxCv/Somoy-TV.png"
             },
             {
