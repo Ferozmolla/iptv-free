@@ -19,11 +19,16 @@
                 "url": "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8",
                 "logo": "https://i.ibb.co.com/S7tZS6cg/Bein-Sports-1-Direct.png"
             },
-            {
-                "name": "ZIGGO SPORT",
-                "url": "http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/2561/index.m3u8",
-                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            {    
+                "name": "Caze Tv Brasil",
+                "url": "https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/1080p-vtt/index.m3u8",
+                "logo": "https://stream.codecloud.bd/uploads/logos/logo_6a2a39c4ac184.png"
             },
+            {
+                "name": "NEXT TV",
+                "url": "https://next.badinan.xyz/nexttv/FHD/playlist.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
+            },          
             {
                 "name": "DAZN",
                 "url": "https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8",
