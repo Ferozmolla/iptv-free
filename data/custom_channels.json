@@ -5,9 +5,9 @@
         "category": "Football",
         "channels": [
             {
-                "name": "Somoy TV HD",
-                "url": "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
-                "logo": "https://i.ibb.co.com/hFXKPxCv/Somoy-TV.png"
+                "name": "FOX USA",
+                "url": "https://inproviszon.st/fox-usa.m3u8",
+                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
             },
             {
                 "name": "Munsun Sports",
@@ -45,9 +45,9 @@
                 "logo": "https://i.ibb.co.com/pvGTyShd/ESPN-HD.png"
             },
             {
-                "name": "CCTV 5",
-                "url": "http://107.150.60.122/live/cctv5hd.m3u8",
-                "logo": "https://i.ibb.co.com/bjwQqq9H/CCTV-5.png"
+                "name": "Somoy TV HD",
+                "url": "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
+                "logo": "https://i.ibb.co.com/hFXKPxCv/Somoy-TV.png"
             },
             {
                 "name": "TSN Sports",
