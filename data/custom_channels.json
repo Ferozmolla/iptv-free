@@ -4,20 +4,15 @@
         "groupIcon": "fas fa-futbol",
         "category": "Football",
         "channels": [
-            {
-                "name": "FOX USA",
-                "url": "https://inproviszon.st/fox-usa.m3u8",
-                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
-            },
-            {
-                 "name": "FOX USA",
-                "url": "https://inproviszon.st/fox4k-usa.m3u8",
-                "logo": "https://assets.football-logos.cc/logos/tournaments/1500x1500/fifa-world-cup-2026--white.10e0b37b.png"
-            },
-            {
+            { 
                 "name": "Munsun Sports",
                 "url": "https://andro.226503.xyz/checklist/androstreamlivebs1.m3u8",
                 "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/330px-2026_FIFA_World_Cup_emblem.svg.png"
+            },
+            {
+                "name": "Somoy TV HD",
+                "url": "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
+                "logo": "https://i.ibb.co.com/hFXKPxCv/Somoy-TV.png"
             },
             {
                 "name": "Bein Sports 1",
