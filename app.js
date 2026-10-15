@@ -3,17 +3,17 @@ let premiumChannels = [];   // চ্যানেল Premium Live.m3u থেক�
 let customChannels = [];    // custom_channels.json থেকে লোড করা চ্যানেল
 let favorites = JSON.parse(localStorage.getItem("iptv_favs")) || [];
 
-// ডিফল্ট ভিউ - Cricket ট্যাব ডিফল্ট করা হয়েছে
-let currentCategory = 'Cricket';
+// ডিফল্ট ভিউ - Sports ট্যাব ডিফল্ট করা হয়েছে
+let currentCategory = 'Sports';
 let currentView = 'playlist';
 
 // শুধুমাত্র এই ১০টি ক্যাটাগরি দেখানো হবে
 const ALLOWED_CATEGORIES = [
-    "Cricket", 
-    "Football", 
+    "Sports", 
     "Bangladesh", 
     "India", 
     "Pakistan", 
+    "Religious",
     "English",
     "News", 
     "Documentary", 
@@ -29,7 +29,7 @@ let isLoadingMore = false;
 
 // State Management - ব্যাক বাটনের জন্য স্টেট সেভ করা
 let lastScrollPosition = 0;
-let lastCategory = 'Cricket';
+let lastCategory = 'Sports';
 let lastView = 'playlist';
 
 // নেটওয়ার্ক স্পীড ডিটেকশন
@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     detectNetworkSpeed();
     loadCustomChannelsFromStorage();
     
-    // সব সময় ওপেনের সাথে ১০ ক্যাটাগরি ট্যাব চালু থাকবে এবং Cricket ডিফল্ট হবে
+    // সব সময় ওপেনের সাথে ১০ ক্যাটাগরি ট্যাব চালু থাকবে এবং Sports ডিফল্ট হবে
     currentView = 'playlist';
-    currentCategory = 'Cricket';
+    currentCategory = 'Sports';
     
     fetchPlaylists();
     setupEventListeners();
@@ -67,7 +67,7 @@ function restoreState() {
         if (savedState) {
             const state = JSON.parse(savedState);
             currentView = state.view || 'playlist';
-            currentCategory = state.category || 'Cricket';
+            currentCategory = state.category || 'Sports';
         }
     } catch (e) {
         console.log("Could not restore state");
@@ -328,8 +328,8 @@ function parseM3U(data, source) {
             if (category.toLowerCase().includes("news")) finalCategory = "News";
             else if (category.toLowerCase().includes("documentary")) finalCategory = "Documentary";
             else if (category.toLowerCase().includes("kids")) finalCategory = "Kids";
-            else if (category.toLowerCase().includes("sports") || category.toLowerCase().includes("cricket")) finalCategory = "Cricket";
-            else if (category.toLowerCase().includes("football")) finalCategory = "Football";
+            else if (category.toLowerCase().includes("sports") || category.toLowerCase().includes("cricket") || category.toLowerCase().includes("football")) finalCategory = "Sports";
+            else if (category.toLowerCase().includes("religious") || category.toLowerCase().includes("islamic")) finalCategory = "Religious";
             else if (category.toLowerCase().includes("bangla") || category.toLowerCase().includes("bangladesh")) finalCategory = "Bangladesh";
             else if (category.toLowerCase().includes("india")) finalCategory = "India";
             else if (category.toLowerCase().includes("pakistan")) finalCategory = "Pakistan";
@@ -384,7 +384,7 @@ function filterCategory(cat) {
 
 function showHome() {
     currentView = 'playlist';
-    currentCategory = 'Cricket';
+    currentCategory = 'Sports';
     
     updateCategories();
     updateTabStyles();
@@ -394,7 +394,7 @@ function showHome() {
 
 function showPremiumLive() {
     currentView = 'premium';
-    // When in premium view, we show all premium channels regardless of category
+    // When in premium view, we show all premium channels regardless of cat
     updateTabStyles();
     filterAndDisplay();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -416,8 +416,8 @@ function updateTabStyles() {
     } else if (currentView === 'fav') {
         const tab = document.getElementById('tab-fav');
         if (tab) tab.classList.add('active');
-    } else if (currentView === 'playlist') {
-        // You could add a home tab if you want, but for now we just clear others
+    } else {
+        // playlist view (Home)
     }
 }
 
@@ -431,18 +431,24 @@ function toggleFav(event, url) {
     }
     localStorage.setItem("iptv_favs", JSON.stringify(favorites));
     
+    // Update button style
     const btn = event.currentTarget;
     btn.classList.toggle('active');
     
-    if (currentView === 'fav') filterAndDisplay();
+    // If we are in favorites view, refresh the list
+    if (currentView === 'fav') {
+        filterAndDisplay();
+    }
 }
 
 function playChannel(url, name) {
+    if (!url) return;
+    
+    // Save state before navigating
     saveState();
-    // Detect slow network if possible
-    const isSlow = (navigator.connection && (navigator.connection.effectiveType === '2g' || navigator.connection.effectiveType === 'slow-2g')) ? '1' : '0';
-    const playerUrl = `player.html?url=${encodeURIComponent(url)}&name=${encodeURIComponent(name)}&slownet=${isSlow}`;
-    window.location.href = playerUrl;
+    
+    // Open player in same window or new tab? Let's use same for better app feel
+    window.location.href = `player.html?url=${encodeURIComponent(url)}&name=${encodeURIComponent(name)}`;
 }
 
 function saveState() {
